@@ -1,0 +1,500 @@
+[0m14:04:40.510461 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76178cc58350>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76178ea455e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76178d06fcb0>]}
+
+
+============================== 14:04:40.515621 | abe6230d-fc43-4355-a206-35bad101f8ee ==============================
+[0m14:04:40.515621 [info ] [MainThread]: Running with dbt=1.10.2
+[0m14:04:40.516443 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/alexandrersf/.dbt', 'debug': 'False', 'warn_error': 'None', 'log_path': 'logs', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt init checkpoint3_alexandre_aw_dw', 'introspect': 'True', 'log_format': 'default', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m14:04:40.547276 [debug] [MainThread]: Starter project path: /home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/venv/lib/python3.12/site-packages/dbt/include/starter_project
+[0m14:04:40.561584 [info ] [MainThread]: 
+Your new dbt project "checkpoint3_alexandre_aw_dw" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m14:04:40.562305 [info ] [MainThread]: Setting up your profile.
+[0m14:04:52.437760 [debug] [MainThread]: Spark adapter: Setting pyhive.hive logging to ERROR
+[0m14:04:52.438260 [debug] [MainThread]: Spark adapter: Setting thrift.transport logging to ERROR
+[0m14:04:52.438584 [debug] [MainThread]: Spark adapter: Setting thrift.protocol logging to ERROR
+[0m14:07:55.999285 [info ] [MainThread]: Profile checkpoint3_alexandre_aw_dw written to /home/alexandrersf/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m14:07:56.004750 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 190.88577, "process_in_blocks": "255000", "process_kernel_time": 0.658529, "process_mem_max_rss": "222608", "process_out_blocks": "88", "process_user_time": 4.141694}
+[0m14:07:56.006492 [debug] [MainThread]: Command `dbt init` succeeded at 14:07:56.006126 after 190.89 seconds
+[0m14:07:56.007603 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76178cfdd130>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76176cbe9e80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x761767faaab0>]}
+[0m14:07:56.009042 [debug] [MainThread]: Flushing usage events
+[0m14:07:56.662547 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:08:43.416279 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79f04dc50d40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79f04d965cd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79f04d9675c0>]}
+
+
+============================== 14:08:43.420853 | 09a5177b-3ac2-4b29-b450-4da18730da7c ==============================
+[0m14:08:43.420853 [info ] [MainThread]: Running with dbt=1.10.2
+[0m14:08:43.421602 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'logs', 'profiles_dir': '/home/alexandrersf/.dbt', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'static_parser': 'True', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'invocation_command': 'dbt debug', 'send_anonymous_usage_stats': 'True'}
+[0m14:08:43.447318 [info ] [MainThread]: dbt version: 1.10.2
+[0m14:08:43.447789 [info ] [MainThread]: python version: 3.12.3
+[0m14:08:43.448124 [info ] [MainThread]: python path: /home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/venv/bin/python3
+[0m14:08:43.448565 [info ] [MainThread]: os info: Linux-6.6.87.1-microsoft-standard-WSL2-x86_64-with-glibc2.39
+[0m14:08:44.313161 [debug] [MainThread]: Spark adapter: Setting pyhive.hive logging to ERROR
+[0m14:08:44.313570 [debug] [MainThread]: Spark adapter: Setting thrift.transport logging to ERROR
+[0m14:08:44.313856 [debug] [MainThread]: Spark adapter: Setting thrift.protocol logging to ERROR
+[0m14:08:45.096827 [info ] [MainThread]: Using profiles dir at /home/alexandrersf/.dbt
+[0m14:08:45.097471 [info ] [MainThread]: Using profiles.yml file at /home/alexandrersf/.dbt/profiles.yml
+[0m14:08:45.097962 [info ] [MainThread]: Using dbt_project.yml file at /home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/dbt_project.yml
+[0m14:08:45.098422 [info ] [MainThread]: adapter type: databricks
+[0m14:08:45.098775 [info ] [MainThread]: adapter version: 1.10.4
+[0m14:08:45.099184 [info ] [MainThread]: Configuration:
+[0m14:08:45.099498 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m14:08:45.099821 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m14:08:45.100109 [info ] [MainThread]: Required dependencies:
+[0m14:08:45.100426 [debug] [MainThread]: Executing "git --help"
+[0m14:08:45.139419 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m14:08:45.139916 [debug] [MainThread]: STDERR: "b''"
+[0m14:08:45.140194 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m14:08:45.140532 [info ] [MainThread]: Connection:
+[0m14:08:45.140903 [info ] [MainThread]:   host: https://dbc-e7cea7f3-e424.cloud.databricks.com
+[0m14:08:45.141267 [info ] [MainThread]:   http_path: https://dbc-e7cea7f3-e424.cloud.databricks.com
+[0m14:08:45.141688 [info ] [MainThread]:   catalog: ted_dev
+[0m14:08:45.142056 [info ] [MainThread]:   schema: dev_alexandre_filho
+[0m14:08:45.142695 [info ] [MainThread]: Registered adapter: databricks=1.10.4
+[0m14:08:45.282874 [debug] [MainThread]: Databricks adapter: DatabricksDBTConnection(session-id=None, name=debug, idle-time=0s, language=None, compute-name=) - Creating connection
+[0m14:08:45.283451 [debug] [MainThread]: Acquiring new databricks connection 'debug'
+[0m14:08:45.283721 [debug] [MainThread]: Using databricks connection "debug"
+[0m14:08:45.283973 [debug] [MainThread]: On debug: select 1 as id
+[0m14:08:45.284180 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:10:20.601449 [error] [MainThread]: Encountered an error:
+
+[0m14:10:20.638962 [error] [MainThread]: Traceback (most recent call last):
+  File "/home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 161, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 111, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/venv/lib/python3.12/site-packages/dbt/cli/main.py", line 420, in debug
+    results = task.run()
+              ^^^^^^^^^^
+  File "/home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/venv/lib/python3.12/site-packages/dbt/task/debug.py", line 144, in run
+    connection_status = self.test_connection()
+                        ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/venv/lib/python3.12/site-packages/dbt/task/debug.py", line 465, in test_connection
+    connection_result = self.attempt_connection(self.profile)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/venv/lib/python3.12/site-packages/dbt/task/debug.py", line 443, in attempt_connection
+    adapter.debug_query()
+  File "/home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/venv/lib/python3.12/site-packages/dbt/adapters/spark/impl.py", line 519, in debug_query
+    self.execute("select 1 as id")
+  File "/home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/venv/lib/python3.12/site-packages/dbt/adapters/databricks/impl.py", line 321, in execute
+    return super().execute(sql=sql, auto_begin=auto_begin, fetch=fetch, limit=limit)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/venv/lib/python3.12/site-packages/dbt_common/record.py", line 507, in record_replay_wrapper
+    return func_to_record(*call_args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/venv/lib/python3.12/site-packages/dbt/adapters/base/impl.py", line 437, in execute
+    return self.connections.execute(sql=sql, auto_begin=auto_begin, fetch=fetch, limit=limit)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/venv/lib/python3.12/site-packages/dbt/adapters/databricks/connections.py", line 343, in execute
+    _, cursor = self.add_query(sql, auto_begin)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/venv/lib/python3.12/site-packages/dbt/adapters/databricks/connections.py", line 316, in add_query
+    handle: DatabricksHandle = connection.handle
+                               ^^^^^^^^^^^^^^^^^
+  File "/home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/venv/lib/python3.12/site-packages/dbt/adapters/contracts/connection.py", line 96, in handle
+    self._handle.resolve(self)
+  File "/home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/venv/lib/python3.12/site-packages/dbt/adapters/contracts/connection.py", line 120, in resolve
+    return self.opener(connection)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/venv/lib/python3.12/site-packages/dbt/adapters/databricks/connections.py", line 477, in open
+    return cls.retry_connection(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/venv/lib/python3.12/site-packages/dbt/adapters/base/connections.py", line 237, in retry_connection
+    connection.handle = connect()
+                        ^^^^^^^^^
+  File "/home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/venv/lib/python3.12/site-packages/dbt/adapters/databricks/connections.py", line 456, in connect
+    conn = DatabricksHandle.from_connection_args(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/venv/lib/python3.12/site-packages/dbt/adapters/databricks/handle.py", line 211, in from_connection_args
+    conn = dbsql.connect(**conn_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/venv/lib/python3.12/site-packages/databricks/sql/__init__.py", line 90, in connect
+    return Connection(server_hostname, http_path, access_token, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/venv/lib/python3.12/site-packages/databricks/sql/client.py", line 278, in __init__
+    self._open_session_resp = self.thrift_backend.open_session(
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/venv/lib/python3.12/site-packages/databricks/sql/thrift_backend.py", line 562, in open_session
+    response = self.make_request(self._client.OpenSession, open_session_req)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/venv/lib/python3.12/site-packages/databricks/sql/thrift_backend.py", line 479, in make_request
+    response_or_error_info = attempt_request(attempt)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/venv/lib/python3.12/site-packages/databricks/sql/thrift_backend.py", line 386, in attempt_request
+    response = method(request)
+               ^^^^^^^^^^^^^^^
+  File "/home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/venv/lib/python3.12/site-packages/databricks/sql/thrift_api/TCLIService/TCLIService.py", line 204, in OpenSession
+    self.send_OpenSession(req)
+  File "/home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/venv/lib/python3.12/site-packages/databricks/sql/thrift_api/TCLIService/TCLIService.py", line 213, in send_OpenSession
+    self._oprot.trans.flush()
+  File "/home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/venv/lib/python3.12/site-packages/databricks/sql/auth/thrift_http_client.py", line 186, in flush
+    self.__resp = self.__pool.request(
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/venv/lib/python3.12/site-packages/urllib3/_request_methods.py", line 143, in request
+    return self.request_encode_body(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/venv/lib/python3.12/site-packages/urllib3/_request_methods.py", line 278, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 942, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 940, in urlopen
+    retries.sleep(response)
+  File "/home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/venv/lib/python3.12/site-packages/urllib3/util/retry.py", line 359, in sleep
+    slept = self.sleep_for_retry(response)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/venv/lib/python3.12/site-packages/databricks/sql/auth/retry.py", line 300, in sleep_for_retry
+    time.sleep(proposed_wait)
+KeyboardInterrupt
+
+[0m14:10:20.642420 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 94.75484, "process_in_blocks": "114136", "process_kernel_time": 0.543114, "process_mem_max_rss": "227708", "process_out_blocks": "56", "process_user_time": 4.353143}
+[0m14:10:20.643003 [debug] [MainThread]: Command `dbt debug` failed at 14:10:20.642842 after 94.76 seconds
+[0m14:10:20.643444 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m14:10:20.643921 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79f04d9f20f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79f033b98d10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79f033be0080>]}
+[0m14:10:20.644393 [debug] [MainThread]: Flushing usage events
+[0m14:10:21.552147 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:10:44.269517 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73e04fea3920>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73e04f85cda0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73e0500b1520>]}
+
+
+============================== 14:10:44.276074 | 2b40d200-2e52-4a92-b495-0a016cabbfbb ==============================
+[0m14:10:44.276074 [info ] [MainThread]: Running with dbt=1.10.2
+[0m14:10:44.277043 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/alexandrersf/.dbt', 'fail_fast': 'False', 'debug': 'False', 'log_path': '/home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt debug', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m14:10:44.293063 [info ] [MainThread]: dbt version: 1.10.2
+[0m14:10:44.293493 [info ] [MainThread]: python version: 3.12.3
+[0m14:10:44.293943 [info ] [MainThread]: python path: /home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/venv/bin/python3
+[0m14:10:44.294307 [info ] [MainThread]: os info: Linux-6.6.87.1-microsoft-standard-WSL2-x86_64-with-glibc2.39
+[0m14:10:45.177527 [debug] [MainThread]: Spark adapter: Setting pyhive.hive logging to ERROR
+[0m14:10:45.178018 [debug] [MainThread]: Spark adapter: Setting thrift.transport logging to ERROR
+[0m14:10:45.178324 [debug] [MainThread]: Spark adapter: Setting thrift.protocol logging to ERROR
+[0m14:10:45.888282 [info ] [MainThread]: Using profiles dir at /home/alexandrersf/.dbt
+[0m14:10:45.889106 [info ] [MainThread]: Using profiles.yml file at /home/alexandrersf/.dbt/profiles.yml
+[0m14:10:45.889829 [info ] [MainThread]: Using dbt_project.yml file at /home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/dbt_project.yml
+[0m14:10:45.890511 [info ] [MainThread]: adapter type: databricks
+[0m14:10:45.891071 [info ] [MainThread]: adapter version: 1.10.4
+[0m14:10:45.997907 [info ] [MainThread]: Configuration:
+[0m14:10:45.998458 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m14:10:45.999062 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m14:10:45.999502 [info ] [MainThread]: Required dependencies:
+[0m14:10:46.000210 [debug] [MainThread]: Executing "git --help"
+[0m14:10:46.017481 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m14:10:46.018032 [debug] [MainThread]: STDERR: "b''"
+[0m14:10:46.018329 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m14:10:46.018815 [info ] [MainThread]: Connection:
+[0m14:10:46.019575 [info ] [MainThread]:   host: https://dbc-e7cea7f3-e424.cloud.databricks.com
+[0m14:10:46.020599 [info ] [MainThread]:   http_path: https://dbc-e7cea7f3-e424.cloud.databricks.com
+[0m14:10:46.021393 [info ] [MainThread]:   catalog: ted_dev
+[0m14:10:46.022353 [info ] [MainThread]:   schema: dev_alexandre_filho
+[0m14:10:46.025280 [info ] [MainThread]: Registered adapter: databricks=1.10.4
+[0m14:10:46.141202 [debug] [MainThread]: Databricks adapter: DatabricksDBTConnection(session-id=None, name=debug, idle-time=0s, language=None, compute-name=) - Creating connection
+[0m14:10:46.141625 [debug] [MainThread]: Acquiring new databricks connection 'debug'
+[0m14:10:46.141882 [debug] [MainThread]: Using databricks connection "debug"
+[0m14:10:46.142111 [debug] [MainThread]: On debug: select 1 as id
+[0m14:10:46.142329 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:14:56.125957 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c748c298710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c748df61e20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c748c478fe0>]}
+
+
+============================== 14:14:56.132467 | b433652d-fd5c-4e8f-9ad8-1a7162fde57c ==============================
+[0m14:14:56.132467 [info ] [MainThread]: Running with dbt=1.10.2
+[0m14:14:56.133155 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': '/home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/logs', 'profiles_dir': '/home/alexandrersf/.dbt', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'log_format': 'default', 'static_parser': 'True', 'target_path': 'None', 'invocation_command': 'dbt debug', 'send_anonymous_usage_stats': 'True'}
+[0m14:14:56.159119 [info ] [MainThread]: dbt version: 1.10.2
+[0m14:14:56.159691 [info ] [MainThread]: python version: 3.12.3
+[0m14:14:56.160051 [info ] [MainThread]: python path: /home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/venv/bin/python3
+[0m14:14:56.160398 [info ] [MainThread]: os info: Linux-6.6.87.1-microsoft-standard-WSL2-x86_64-with-glibc2.39
+[0m14:14:56.163248 [info ] [MainThread]: Using profiles dir at /home/alexandrersf/.dbt
+[0m14:14:56.163726 [info ] [MainThread]: Using profiles.yml file at /home/alexandrersf/.dbt/profiles.yml
+[0m14:14:56.164099 [info ] [MainThread]: Using dbt_project.yml file at /home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/dbt_project.yml
+[0m14:14:56.285084 [info ] [MainThread]: Configuration:
+[0m14:14:56.285615 [info ] [MainThread]:   profiles.yml file [[31mERROR invalid[0m]
+[0m14:14:56.286036 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m14:14:56.286442 [info ] [MainThread]: Required dependencies:
+[0m14:14:56.286827 [debug] [MainThread]: Executing "git --help"
+[0m14:14:56.318188 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m14:14:56.318788 [debug] [MainThread]: STDERR: "b''"
+[0m14:14:56.319110 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m14:14:56.319719 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m14:14:56.320468 [info ] [MainThread]: [31m1 check failed:[0m
+[0m14:14:56.320943 [info ] [MainThread]: Profile loading failed for the following reason:
+Runtime Error
+  Could not find profile named 'dbt_checkpoint3_aw_dw'
+
+
+[0m14:14:56.322426 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 0.26481074, "process_in_blocks": "54880", "process_kernel_time": 0.317022, "process_mem_max_rss": "102148", "process_out_blocks": "16", "process_user_time": 1.660407}
+[0m14:14:56.322912 [debug] [MainThread]: Command `dbt debug` failed at 14:14:56.322785 after 0.27 seconds
+[0m14:14:56.323233 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c74900ef230>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c748ba894f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c748c1b4a70>]}
+[0m14:14:56.323574 [debug] [MainThread]: Flushing usage events
+[0m14:14:56.826176 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:16:24.352412 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f98dffe5700>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f98e0677020>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f98dfd7cfb0>]}
+
+
+============================== 14:16:24.357558 | f793747f-b289-4803-84a7-b0ccd99924f4 ==============================
+[0m14:16:24.357558 [info ] [MainThread]: Running with dbt=1.10.2
+[0m14:16:24.358260 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/alexandrersf/.dbt', 'version_check': 'True', 'fail_fast': 'False', 'log_path': '/home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt debug', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m14:16:24.379974 [info ] [MainThread]: dbt version: 1.10.2
+[0m14:16:24.380460 [info ] [MainThread]: python version: 3.12.3
+[0m14:16:24.380998 [info ] [MainThread]: python path: /home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/venv/bin/python3
+[0m14:16:24.381461 [info ] [MainThread]: os info: Linux-6.6.87.1-microsoft-standard-WSL2-x86_64-with-glibc2.39
+[0m14:16:24.385639 [info ] [MainThread]: Using profiles dir at /home/alexandrersf/.dbt
+[0m14:16:24.386139 [info ] [MainThread]: Using profiles.yml file at /home/alexandrersf/.dbt/profiles.yml
+[0m14:16:24.386690 [info ] [MainThread]: Using dbt_project.yml file at /home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/dbt_project.yml
+[0m14:16:24.498684 [info ] [MainThread]: Configuration:
+[0m14:16:24.499196 [info ] [MainThread]:   profiles.yml file [[31mERROR invalid[0m]
+[0m14:16:24.499658 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m14:16:24.500104 [info ] [MainThread]: Required dependencies:
+[0m14:16:24.500557 [debug] [MainThread]: Executing "git --help"
+[0m14:16:24.566524 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m14:16:24.567214 [debug] [MainThread]: STDERR: "b''"
+[0m14:16:24.567694 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m14:16:24.568289 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m14:16:24.568867 [info ] [MainThread]: [31m1 check failed:[0m
+[0m14:16:24.569435 [info ] [MainThread]: Profile loading failed for the following reason:
+Runtime Error
+  Could not find profile named 'dbt_checkpoint3_aw_dw'
+
+
+[0m14:16:24.571270 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 0.27971703, "process_in_blocks": "54872", "process_kernel_time": 0.312617, "process_mem_max_rss": "102096", "process_out_blocks": "16", "process_user_time": 1.464156}
+[0m14:16:24.571786 [debug] [MainThread]: Command `dbt debug` failed at 14:16:24.571679 after 0.28 seconds
+[0m14:16:24.572144 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f98e0562ed0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f98e01d90a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f98dfa50b60>]}
+[0m14:16:24.572480 [debug] [MainThread]: Flushing usage events
+[0m14:16:25.271621 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:17:54.037250 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7673a43b31a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7673a4ded640>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7673a4895370>]}
+
+
+============================== 14:17:54.042310 | ff579ba4-28ec-4a29-9e2f-bb6a6d36a632 ==============================
+[0m14:17:54.042310 [info ] [MainThread]: Running with dbt=1.10.2
+[0m14:17:54.043141 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/alexandrersf/.dbt', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt init dbt_checkpoint3_dw', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True'}
+[0m14:17:54.068310 [debug] [MainThread]: Starter project path: /home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/venv/lib/python3.12/site-packages/dbt/include/starter_project
+[0m14:17:54.082552 [info ] [MainThread]: 
+Your new dbt project "dbt_checkpoint3_dw" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m14:17:54.083042 [info ] [MainThread]: Setting up your profile.
+[0m14:18:13.816910 [debug] [MainThread]: Spark adapter: Setting pyhive.hive logging to ERROR
+[0m14:18:13.817626 [debug] [MainThread]: Spark adapter: Setting thrift.transport logging to ERROR
+[0m14:18:13.818179 [debug] [MainThread]: Spark adapter: Setting thrift.protocol logging to ERROR
+[0m14:18:57.471293 [info ] [MainThread]: Profile dbt_checkpoint3_dw written to /home/alexandrersf/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m14:18:57.476486 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 61.728436, "process_in_blocks": "111864", "process_kernel_time": 0.687084, "process_mem_max_rss": "222388", "process_out_blocks": "88", "process_user_time": 4.519214}
+[0m14:18:57.479157 [debug] [MainThread]: Command `dbt init` succeeded at 14:18:57.478579 after 61.73 seconds
+[0m14:18:57.480942 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7673a4942fc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76737fffaab0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76737f8aa0c0>]}
+[0m14:18:57.482938 [debug] [MainThread]: Flushing usage events
+[0m14:18:58.248725 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:19:34.873590 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78d2f3a452e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78d2f1cf20f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78d2f1ff4fb0>]}
+
+
+============================== 14:19:34.877476 | 44bda72b-5d96-4c20-ab75-c3d15a069184 ==============================
+[0m14:19:34.877476 [info ] [MainThread]: Running with dbt=1.10.2
+[0m14:19:34.878268 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/logs', 'profiles_dir': '/home/alexandrersf/.dbt', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'log_format': 'default', 'static_parser': 'True', 'target_path': 'None', 'invocation_command': 'dbt debug', 'send_anonymous_usage_stats': 'True'}
+[0m14:19:34.903462 [info ] [MainThread]: dbt version: 1.10.2
+[0m14:19:34.903950 [info ] [MainThread]: python version: 3.12.3
+[0m14:19:34.904362 [info ] [MainThread]: python path: /home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/venv/bin/python3
+[0m14:19:34.904855 [info ] [MainThread]: os info: Linux-6.6.87.1-microsoft-standard-WSL2-x86_64-with-glibc2.39
+[0m14:19:35.823889 [debug] [MainThread]: Spark adapter: Setting pyhive.hive logging to ERROR
+[0m14:19:35.825000 [debug] [MainThread]: Spark adapter: Setting thrift.transport logging to ERROR
+[0m14:19:35.825837 [debug] [MainThread]: Spark adapter: Setting thrift.protocol logging to ERROR
+[0m14:19:36.713575 [info ] [MainThread]: Using profiles dir at /home/alexandrersf/.dbt
+[0m14:19:36.714410 [info ] [MainThread]: Using profiles.yml file at /home/alexandrersf/.dbt/profiles.yml
+[0m14:19:36.714972 [info ] [MainThread]: Using dbt_project.yml file at /home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/dbt_project.yml
+[0m14:19:36.715512 [info ] [MainThread]: adapter type: databricks
+[0m14:19:36.716000 [info ] [MainThread]: adapter version: 1.10.4
+[0m14:19:36.830056 [info ] [MainThread]: Configuration:
+[0m14:19:36.830905 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m14:19:36.831683 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m14:19:36.832353 [info ] [MainThread]: Required dependencies:
+[0m14:19:36.832843 [debug] [MainThread]: Executing "git --help"
+[0m14:19:36.848376 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m14:19:36.849018 [debug] [MainThread]: STDERR: "b''"
+[0m14:19:36.849527 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m14:19:36.849981 [info ] [MainThread]: Connection:
+[0m14:19:36.850454 [info ] [MainThread]:   host: https://dbc-e7cea7f3-e424.cloud.databricks.com
+[0m14:19:36.850915 [info ] [MainThread]:   http_path: https://dbc-e7cea7f3-e424.cloud.databricks.com
+[0m14:19:36.851586 [info ] [MainThread]:   catalog: ted_dev
+[0m14:19:36.852024 [info ] [MainThread]:   schema: dev_alexandre_filho
+[0m14:19:36.852829 [info ] [MainThread]: Registered adapter: databricks=1.10.4
+[0m14:19:36.977735 [debug] [MainThread]: Databricks adapter: DatabricksDBTConnection(session-id=None, name=debug, idle-time=0s, language=None, compute-name=) - Creating connection
+[0m14:19:36.978298 [debug] [MainThread]: Acquiring new databricks connection 'debug'
+[0m14:19:36.978612 [debug] [MainThread]: Using databricks connection "debug"
+[0m14:19:36.978890 [debug] [MainThread]: On debug: select 1 as id
+[0m14:19:36.979156 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:34:04.785895 [error] [MainThread]: databricks-sql-connector adapter: ThriftBackend.attempt_request: Exception: %s
+[0m14:34:04.813671 [error] [MainThread]: Databricks adapter: Connection(session-id=Unknown) - Exception while trying to create connection: Error during request to server. Retry request would exceed Retry policy max retry duration of 900.0 seconds
+Error properties: attempt=1/30, bounded-retry-delay=None, elapsed-seconds=867.797337770462/900.0, error-message=, http-code=None, method=OpenSession, no-retry-reason=non-retryable error, original-exception=Retry request would exceed Retry policy max retry duration of 900.0 seconds, query-id=None, session-id=None
+[0m14:34:04.818707 [debug] [MainThread]: Databricks adapter: Exception while trying to execute query
+select 1 as id
+: Database Error
+  Error during request to server. Retry request would exceed Retry policy max retry duration of 900.0 seconds
+[0m14:34:04.827727 [info ] [MainThread]:   Connection test: [[31mERROR[0m]
+
+[0m14:34:04.831173 [info ] [MainThread]: [31m1 check failed:[0m
+[0m14:34:04.831799 [info ] [MainThread]: dbt was unable to connect to the specified database.
+The database returned the following error:
+
+  >Database Error
+  Database Error
+    Error during request to server. Retry request would exceed Retry policy max retry duration of 900.0 seconds
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m14:34:04.878182 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 846.5929, "process_in_blocks": "110240", "process_kernel_time": 0.567941, "process_mem_max_rss": "228500", "process_out_blocks": "24", "process_user_time": 5.103301}
+[0m14:34:04.884817 [debug] [MainThread]: Command `dbt debug` failed at 14:34:04.883841 after 846.61 seconds
+[0m14:34:04.891556 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m14:34:04.892722 [debug] [MainThread]: On debug: No close available on handle
+[0m14:34:04.895725 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78d2f53b7230>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78d2f1090500>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78d2d088bd70>]}
+[0m14:34:04.900524 [debug] [MainThread]: Flushing usage events
+[0m14:34:05.678880 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:37:06.904237 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74d98538d0d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74d982983e30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74d9838838c0>]}
+
+
+============================== 14:37:06.908773 | 4681d6f2-253f-41ca-a67c-293315114488 ==============================
+[0m14:37:06.908773 [info ] [MainThread]: Running with dbt=1.10.2
+[0m14:37:06.909430 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': '/home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/logs', 'debug': 'False', 'profiles_dir': '/home/alexandrersf/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt debug', 'introspect': 'True', 'log_format': 'default', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m14:37:06.927351 [info ] [MainThread]: dbt version: 1.10.2
+[0m14:37:06.928023 [info ] [MainThread]: python version: 3.12.3
+[0m14:37:06.928490 [info ] [MainThread]: python path: /home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/venv/bin/python3
+[0m14:37:06.928939 [info ] [MainThread]: os info: Linux-6.6.87.1-microsoft-standard-WSL2-x86_64-with-glibc2.39
+[0m14:37:08.050744 [debug] [MainThread]: Spark adapter: Setting pyhive.hive logging to ERROR
+[0m14:37:08.051286 [debug] [MainThread]: Spark adapter: Setting thrift.transport logging to ERROR
+[0m14:37:08.051658 [debug] [MainThread]: Spark adapter: Setting thrift.protocol logging to ERROR
+[0m14:37:09.545769 [info ] [MainThread]: Using profiles dir at /home/alexandrersf/.dbt
+[0m14:37:09.546461 [info ] [MainThread]: Using profiles.yml file at /home/alexandrersf/.dbt/profiles.yml
+[0m14:37:09.546899 [info ] [MainThread]: Using dbt_project.yml file at /home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/dbt_project.yml
+[0m14:37:09.547365 [info ] [MainThread]: adapter type: databricks
+[0m14:37:09.547767 [info ] [MainThread]: adapter version: 1.10.4
+[0m14:37:09.713029 [info ] [MainThread]: Configuration:
+[0m14:37:09.713628 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m14:37:09.714224 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m14:37:09.714842 [info ] [MainThread]: Required dependencies:
+[0m14:37:09.716087 [debug] [MainThread]: Executing "git --help"
+[0m14:37:09.753840 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m14:37:09.754808 [debug] [MainThread]: STDERR: "b''"
+[0m14:37:09.755311 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m14:37:09.756166 [info ] [MainThread]: Connection:
+[0m14:37:09.757225 [info ] [MainThread]:   host: https://dbc-e7cea7f3-e424.cloud.databricks.com
+[0m14:37:09.758167 [info ] [MainThread]:   http_path: https://dbc-e7cea7f3-e424.cloud.databricks.com
+[0m14:37:09.758806 [info ] [MainThread]:   catalog: ted_dev
+[0m14:37:09.759498 [info ] [MainThread]:   schema: dev_alexandre_filho
+[0m14:37:09.760386 [info ] [MainThread]: Registered adapter: databricks=1.10.4
+[0m14:37:09.906497 [debug] [MainThread]: Databricks adapter: DatabricksDBTConnection(session-id=None, name=debug, idle-time=0s, language=None, compute-name=) - Creating connection
+[0m14:37:09.907114 [debug] [MainThread]: Acquiring new databricks connection 'debug'
+[0m14:37:09.907492 [debug] [MainThread]: Using databricks connection "debug"
+[0m14:37:09.907883 [debug] [MainThread]: On debug: select 1 as id
+[0m14:37:09.908171 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:47:14.005519 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ead8c88d430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ead8c854ec0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ead8c88d4c0>]}
+
+
+============================== 14:47:14.010738 | 2f6583a8-b17f-4019-9d80-4156e0465493 ==============================
+[0m14:47:14.010738 [info ] [MainThread]: Running with dbt=1.10.2
+[0m14:47:14.011912 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code', 'version_check': 'True', 'warn_error': 'None', 'log_path': '/home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/logs', 'fail_fast': 'False', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'invocation_command': 'dbt debug', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True'}
+[0m14:47:14.034274 [info ] [MainThread]: dbt version: 1.10.2
+[0m14:47:14.037639 [info ] [MainThread]: python version: 3.12.3
+[0m14:47:14.038328 [info ] [MainThread]: python path: /home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/venv/bin/python3
+[0m14:47:14.039044 [info ] [MainThread]: os info: Linux-6.6.87.1-microsoft-standard-WSL2-x86_64-with-glibc2.39
+[0m14:47:14.043042 [info ] [MainThread]: Using profiles dir at /home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code
+[0m14:47:14.043541 [info ] [MainThread]: Using profiles.yml file at /home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/profiles.yml
+[0m14:47:14.043974 [info ] [MainThread]: Using dbt_project.yml file at /home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/dbt_project.yml
+[0m14:47:14.166462 [info ] [MainThread]: Configuration:
+[0m14:47:14.167963 [info ] [MainThread]:   profiles.yml file [[31mERROR invalid[0m]
+[0m14:47:14.168521 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m14:47:14.169220 [info ] [MainThread]: Required dependencies:
+[0m14:47:14.169664 [debug] [MainThread]: Executing "git --help"
+[0m14:47:14.228353 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m14:47:14.229202 [debug] [MainThread]: STDERR: "b''"
+[0m14:47:14.229942 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m14:47:14.230649 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m14:47:14.231302 [info ] [MainThread]: [31m1 check failed:[0m
+[0m14:47:14.232098 [info ] [MainThread]: Profile loading failed for the following reason:
+Runtime Error
+  Could not find profile named 'dbt_checkpoint3_dw'
+
+
+[0m14:47:14.235095 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 0.28920448, "process_in_blocks": "54608", "process_kernel_time": 0.616376, "process_mem_max_rss": "101988", "process_out_blocks": "24", "process_user_time": 1.758122}
+[0m14:47:14.235557 [debug] [MainThread]: Command `dbt debug` failed at 14:47:14.235465 after 0.29 seconds
+[0m14:47:14.235843 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ead8eb65cd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ead8c0ac4a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ead8e92a360>]}
+[0m14:47:14.236144 [debug] [MainThread]: Flushing usage events
+[0m14:47:15.307371 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:47:57.069024 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x704a57791010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x704a559218b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x704a5598b440>]}
+
+
+============================== 14:47:57.071865 | f802f999-5ec1-49be-9292-37b90705996b ==============================
+[0m14:47:57.071865 [info ] [MainThread]: Running with dbt=1.10.2
+[0m14:47:57.072387 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': '/home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code', 'log_path': '/home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'invocation_command': 'dbt debug', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m14:47:57.079864 [info ] [MainThread]: dbt version: 1.10.2
+[0m14:47:57.080638 [info ] [MainThread]: python version: 3.12.3
+[0m14:47:57.081270 [info ] [MainThread]: python path: /home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/venv/bin/python3
+[0m14:47:57.081766 [info ] [MainThread]: os info: Linux-6.6.87.1-microsoft-standard-WSL2-x86_64-with-glibc2.39
+[0m14:47:58.199183 [debug] [MainThread]: Spark adapter: Setting pyhive.hive logging to ERROR
+[0m14:47:58.199610 [debug] [MainThread]: Spark adapter: Setting thrift.transport logging to ERROR
+[0m14:47:58.199898 [debug] [MainThread]: Spark adapter: Setting thrift.protocol logging to ERROR
+[0m14:47:59.443108 [info ] [MainThread]: Using profiles dir at /home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code
+[0m14:47:59.443833 [info ] [MainThread]: Using profiles.yml file at /home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/profiles.yml
+[0m14:47:59.444583 [info ] [MainThread]: Using dbt_project.yml file at /home/alexandrersf/projects/checkpoint2_meltano/checkpoint2_meltano_code/dbt_project.yml
+[0m14:47:59.445137 [info ] [MainThread]: adapter type: databricks
+[0m14:47:59.446241 [info ] [MainThread]: adapter version: 1.10.4
+[0m14:47:59.628068 [info ] [MainThread]: Configuration:
+[0m14:47:59.628909 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m14:47:59.629672 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m14:47:59.630286 [info ] [MainThread]: Required dependencies:
+[0m14:47:59.631690 [debug] [MainThread]: Executing "git --help"
+[0m14:47:59.637139 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m14:47:59.637930 [debug] [MainThread]: STDERR: "b''"
+[0m14:47:59.638366 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m14:47:59.639047 [info ] [MainThread]: Connection:
+[0m14:47:59.640897 [info ] [MainThread]:   host: https://dbc-e7cea7f3-e424.cloud.databricks.com
+[0m14:47:59.641669 [info ] [MainThread]:   http_path: /sql/1.0/warehouses/e9fc9bad6a55f558
+[0m14:47:59.642348 [info ] [MainThread]:   catalog: ted_dev
+[0m14:47:59.642954 [info ] [MainThread]:   schema: dev_alexandre_filho
+[0m14:47:59.644529 [info ] [MainThread]: Registered adapter: databricks=1.10.4
+[0m14:47:59.840522 [debug] [MainThread]: Databricks adapter: DatabricksDBTConnection(session-id=None, name=debug, idle-time=0s, language=None, compute-name=) - Creating connection
+[0m14:47:59.841085 [debug] [MainThread]: Acquiring new databricks connection 'debug'
+[0m14:47:59.841731 [debug] [MainThread]: Using databricks connection "debug"
+[0m14:47:59.842325 [debug] [MainThread]: On debug: select 1 as id
+[0m14:47:59.842738 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:48:00.940748 [debug] [MainThread]: Databricks adapter: Connection(session-id=01f0576c-b252-151a-a1bf-62e0655540e7) - Created
+[0m14:48:14.835011 [debug] [MainThread]: SQL status: OK in 14.990 seconds
+[0m14:48:14.837493 [debug] [MainThread]: Databricks adapter: Cursor(session-id=01f0576c-b252-151a-a1bf-62e0655540e7, command-id=01f0576c-b288-1c99-a809-d9500ea007ae) - Closing
+[0m14:48:15.156104 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m14:48:15.157829 [info ] [MainThread]: [32mAll checks passed![0m
+[0m14:48:15.162421 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 18.155703, "process_in_blocks": "61416", "process_kernel_time": 0.666675, "process_mem_max_rss": "229564", "process_out_blocks": "16", "process_user_time": 5.002133}
+[0m14:48:15.163403 [debug] [MainThread]: Command `dbt debug` succeeded at 14:48:15.163236 after 18.16 seconds
+[0m14:48:15.164338 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m14:48:15.165513 [debug] [MainThread]: On debug: Close
+[0m14:48:15.168111 [debug] [MainThread]: Databricks adapter: Connection(session-id=01f0576c-b252-151a-a1bf-62e0655540e7) - Closing
+[0m14:48:15.371539 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x704a5915f230>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x704a53fe1a60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x704a54da16d0>]}
+[0m14:48:15.372953 [debug] [MainThread]: Flushing usage events
+[0m14:48:17.248550 [debug] [MainThread]: An error was encountered while trying to flush usage events

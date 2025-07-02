@@ -32,7 +32,7 @@ plugins:
           page_param: offset
           page_size_param: limit
           start_page: 0 
-          limit: 100 
+          limit: 100000 
         total_jsonpath: $.total 
         offset_jsonpath: $.offset
         
