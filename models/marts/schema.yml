@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: fact_sales_order_header
+    description: "Tabela fato de vendas consolidada"
+    columns:
+      - name: id_pedido
+        description: "Chave primária do pedido"
+      - name: id_cliente
+        description: "ID do cliente associado"

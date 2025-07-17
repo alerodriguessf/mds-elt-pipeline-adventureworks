@@ -1,11 +1,17 @@
+# Bytecode e cache
 __pycache__/
 *.pyc
 *.pyd
 *.pyo
 .Python
+
+# Ambientes virtuais
 /.env
 venv/
+
+# Diretórios do Meltano
 .meltano/
+
+# Saídas temporárias e testes locais
 output/
 docker_test/
-profiles.yml

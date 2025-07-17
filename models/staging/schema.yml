@@ -1,0 +1,45 @@
+# models/staging/schema.yml
+
+version: 2
+
+sources:
+  - name: databricks_dw_aw
+    database: "{{ env_var('DATABRICKS_CATALOG') }}"
+    schema: "{{ env_var('DATABRICKS_SCHEMA_RAW') }}"
+    tables:
+      - name: raw_sqlserver_sales_salesorderheader_db
+        loaded_at_field: ModifiedDate
+      - name: raw_sqlserver_sales_salesorderdetail_db
+        loaded_at_field: ModifiedDate
+      - name: raw_sqlserver_production_product_db
+        loaded_at_field: ModifiedDate
+      - name: raw_sqlserver_sales_salesterritory_db
+        loaded_at_field: ModifiedDate
+      - name: raw_sqlserver_purchasing_shipmethod_db
+        loaded_at_field: ModifiedDate
+      - name: raw_sqlserver_sales_vsalesperson_db
+        loaded_at_field: ModifiedDate
+      - name: raw_sqlserver_sales_currencyrate_db
+        loaded_at_field: ModifiedDate
+
+models:
+  - name: stg_sales_order_header
+    description: "Tabela de staging com os pedidos de venda"
+
+  - name: stg_sales_order_detail
+    description: "Tabela de staging com os detalhes dos pedidos de venda"
+
+  - name: stg_production_product_details
+    description: "Tabela de staging com os detalhes dos produtos"
+
+  - name: stg_sales_territory
+    description: "Tabela de staging com os territórios de vendas"
+
+  - name: stg_sales_ship_method
+    description: "Tabela de staging com os territórios de vendas"
+
+  - name: stg_sales_person_details
+    description: "Tabela de staging com os detalhes dos vendedores"
+
+  - name: stg_sales_currency_rate
+    description: "Tabela de staging com as taxas de câmbio de vendas"
