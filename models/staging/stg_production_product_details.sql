@@ -14,8 +14,8 @@ revised as (
         Color             as product_color,
         SafetyStockLevel  as safety_stock_level,
         ReorderPoint      as reorder_point,
-        StandardCost      as standard_cost,
-        ListPrice         as list_price,
+        cast(StandardCost as decimal(18,2))      as standard_cost,
+        cast(ListPrice as decimal(18,2))         as list_price,
         Size              as product_size,
         SizeUnitMeasureCode as size_unit_measure_code,
         WeightUnitMeasureCode as weight_unit_measure_code,
@@ -26,11 +26,11 @@ revised as (
         Style             as product_style,
         ProductSubcategoryID as product_subcategory_id,
         ProductModelID    as product_model_id,
-        SellStartDate     as sell_start_date,
-        SellEndDate       as sell_end_date,
-        DiscontinuedDate  as discontinued_date,
+        cast(SellStartDate as date)     as sell_start_date,
+        cast(SellEndDate as date)       as sell_end_date,
+        cast(DiscontinuedDate as date)  as discontinued_date,
         rowguid           as row_guid,
-        ModifiedDate      as modified_date
+        cast(ModifiedDate as date)      as modified_date
 
     from source
 

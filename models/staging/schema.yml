@@ -29,27 +29,285 @@ sources:
 models:
   - name: stg_sales_order_header
     description: "Tabela de staging com os pedidos de venda"
-
+    Columns:
+      - name: order_id
+        description: "ID do pedido de venda"
+      - name: nm_revisao
+        description: "Número de revisão do pedido"
+      - name: order_date
+        description: "Data do pedido"
+      - name: due_date
+        description: "Data de vencimento do pedido"
+      - name: ship_date
+        description: "Data de envio do pedido"
+      - name: is_online_order
+        description: "Indica se o pedido é online"
+      - name: order_number
+        description: "Número do pedido"
+      - name: purchase_order_number
+        description: "Número da ordem de compra"
+      - name: account_number
+        description: "Número da conta do cliente"
+      - name: customer_id
+        description: "ID do cliente"
+      - name: sales_person_id
+        description: "ID do vendedor"
+      - name: territory_id
+        description: "ID do território de vendas"
+      - name: bill_to_address_id
+        description: "ID do endereço de cobrança"
+      - name: ship_to_address_id
+        description: "ID do endereço de envio"
+      - name: ship_method_id
+        description: "ID do método de envio"
+      - name: credit_card_id
+        description: "ID do cartão de crédito"
+      - name: credit_card_approval_code
+        description: "Código de aprovação do cartão de crédito"
+      - name: currency_rate_id
+        description: "ID da taxa de câmbio"
+      - name: sub_total
+        description: "Subtotal do pedido"
+      - name: tax_amount
+        description: "Valor do imposto sobre o pedido"
+      - name: freight
+        description: "Frete do pedido"
+      - name: total_due
+        description: "Total devido do pedido"
+      - name: comment
+        description: "Comentário sobre o pedido"
+      - name: row_guid
+        description: "GUID da linha do pedido"
+      - name: modified_date
+        description: "Data de modificação do pedido"
+      
   - name: stg_sales_order_detail
     description: "Tabela de staging com os detalhes dos pedidos de venda"
+    Columns:
+      - name: order_id
+        description: "ID do pedido de venda"
+      - name: order_detail_id
+        description: "ID do detalhe do pedido"
+      - name: order_quantity
+        description: "Quantidade do pedido"
+      - name: product_id
+        description: "ID do produto"
+      - name: special_offer_id
+        description: "ID da oferta especial"
+      - name: unit_price
+        description: "Preço unitário do produto"
+      - name: unit_price_discount
+        description: "Desconto no preço unitário"
+      - name: line_total
+        description: "Total da linha do pedido"
+      - name: row_guid
+        description: "GUID da linha do detalhe do pedido"
+      - name: modified_date
+        description: "Data de modificação do detalhe do pedido"
 
   - name: stg_production_product_details
     description: "Tabela de staging com os detalhes dos produtos"
+    Columns:
+      - name: product_id
+        description: "ID do produto"
+      - name: product_name  
+        description: "Nome do produto"
+      - name: product_number
+        description: "Número do produto"
+      - name: is_make
+        description: "Indica se o produto é fabricado"
+      - name: is_finished_good
+        description: "Indica se o produto é um produto acabado"
+      - name: product_color
+        description: "Cor do produto"
+      - name: safety_stock_level
+        description: "Nível de estoque de segurança do produto"
+      - name: reorder_point
+        description: "Ponto de reabastecimento do produto"
+      - name: standard_cost
+        description: "Custo padrão do produto"
+      - name: list_price
+        description: "Preço de lista do produto"
+      - name: product_size
+        description: "Tamanho do produto"
+      - name: size_unit_measure_code
+        description: "Código da unidade de medida do tamanho"
+      - name: weight_unit_measure_code
+        description: "Código da unidade de medida do peso"
+      - name: product_weight
+        description: "Peso do produto" 
+      - name: days_to_manufacture
+        description: "Dias para fabricar o produto"
+      - name: product_line
+        description: "Linha do produto"
+      - name: product_class
+        description: "Classe do produto"
+      - name: product_style
+        description: "Estilo do produto"
+      - name: product_subcategory_id
+        description: "ID da subcategoria do produto"
+      - name: product_model_id
+        description: "ID do modelo do produto"
+      - name: sell_start_date
+        description: "Data de início de venda do produto"
+      - name: sell_end_date
+        description: "Data de término de venda do produto"
+      - name: discontinued_date
+        description: "Data de descontinuação do produto"
+      - name: row_guid
+        description: "GUID da linha do produto"
+      - name: modified_date
+        description: "Data de modificação do produto"
+      
 
   - name: stg_sales_territory
     description: "Tabela de staging com os territórios de vendas"
+    Columns:
+      - name: territory_id
+        description: "ID do território de vendas"
+      - name: territory_name
+        description: "Nome do território de vendas"
+      - name: country_region_code
+        description: "Código da região do país"
+      - name: territory_group
+        description: "Grupo do território de vendas"
+      - name: sales_ytd 
+        description: "Vendas acumuladas no ano do território"
+      - name: sales_last_year
+        description: "Vendas do ano passado do território"
+      - name: cost_last_year
+        description: "Custo do ano passado do território"
+      - name: row_guid
+        description: "GUID da linha do território"
+      - name: modified_date
+        description: "Data de modificação do território"
 
   - name: stg_sales_ship_method
     description: "Tabela de staging com os territórios de vendas"
+    Columns:
+      - name: ship_method_id
+        description: "ID do método de envio"
+      - name: ship_method_name
+        description: "Nome do método de envio"
+      - name: ship_base
+        description: "Custo base do envio"
+      - name: ship_rate
+        description: "Taxa de envio"
+      - name: row_guid
+        description: "GUID da linha do método de envio"
+      - name: modified_date
+        description: "Data de modificação do método de envio"
 
   - name: stg_sales_person_details
     description: "Tabela de staging com os detalhes dos vendedores"
+    Columns:
+      - name: sales_person_id
+        description: "ID do vendedor"
+      - name: title
+        description: "Título do vendedor"
+      - name: first_name
+        description: "Primeiro nome do vendedor"
+      - name: middle_name
+        description: "Nome do meio do vendedor"
+      - name: last_name
+        description: "Último nome do vendedor"
+      - name: suffix
+        description: "Sufixo do nome do vendedor"
+      - name: job_title
+        description: "Cargo do vendedor"
+      - name: phone_number
+        description: "Telefone do vendedor"
+      - name: phone_number_type
+        description: "Tipo de telefone do vendedor"
+      - name: email_address
+        description: "Endereço de e-mail do vendedor"
+      - name: email_promotion
+        description: "Promoção por e-mail do vendedor"
+      - name: address_line_1
+        description: "Linha de endereço 1 do vendedor"
+      - name: address_line_2
+        description: "Linha de endereço 2 do vendedor"
+      - name: city
+        description: "Cidade do vendedor"
+      - name: state_province_name
+        description: "Estado ou província do vendedor"
+      - name: postal_code
+        description: "Código postal do vendedor"
+      - name: country_region_name
+        description: "Nome do país ou região do vendedor"
+      - name: territory_id
+        description: "ID do território do vendedor"
+      - name: territory_group
+        description: "Grupo do território do vendedor"
+      - name: sales_quota
+        description: "Cota de vendas do vendedor"
+      - name: sales_ytd
+        description: "Vendas acumuladas no ano do vendedor"
+      - name: sales_last_year
+        description: "Vendas do ano passado do vendedor"
 
   - name: stg_sales_currency_rate
     description: "Tabela de staging com as taxas de câmbio de vendasss"
+    Columns:
+      - name: currency_rate_id
+        description: "ID da taxa de câmbio"
+      - name: currency_rate_date
+        description: "Data da taxa de câmbio"
+      - name: from_currency_code
+        description: "Código da moeda de origem"
+      - name: to_currency_code
+        description: "Código da moeda de destino"
+      - name: average_rate
+        description: "Taxa média de câmbio"
+      - name: end_of_day_rate
+        description: "Taxa de câmbio do final do dia"
+      - name: modified_date
+        description: "Data de modificação da taxa de câmbio"
 
   - name: stg_sales_customer_info
     description: "Tabela de staging com as informações dos clientes"
+    Columns:
+      - name: customer_id
+        description: "ID do cliente"
+      - name: person_id 
+        description: "ID da pessoa associada ao cliente"
+      - name: store_id
+        description: "ID da loja associada ao cliente"
+      - name: territory_id
+        description: "ID do território associado ao cliente"
+      - name: account_number
+        description: "Número da conta do cliente"
+      - name: row_guid
+        description: "GUID da linha do cliente"
+      - name: modified_date
+        description: "Data de modificação do cliente"
 
   - name: stg_person_person_details
     description: "Tabela de staging com os detalhes das pessoas"
+    Columns:
+      - name: person_id
+        description: "ID da pessoa"
+      - name: person_type
+        description: "Tipo de pessoa (por exemplo, cliente, funcionário)"
+      - name: name_style
+        description: "Estilo do nome da pessoa"
+      - name: title
+        description: "Título da pessoa"
+      - name: first_name
+        description: "Primeiro nome da pessoa"
+      - name: middle_name
+        description: "Nome do meio da pessoa"
+      - name: last_name
+        description: "Último nome da pessoa"
+      - name: suffix
+        description: "Sufixo do nome da pessoa"
+      - name: email_promotion
+        description: "Promoção por e-mail da pessoa"
+      - name: additional_contact_info
+        description: "Informações de contato adicionais da pessoa"
+      - name: demographics
+        description: "Demografia da pessoa"
+      - name: row_guid
+        description: "GUID da linha da pessoa"
+      - name: modified_date
+        description: "Data de modificação da pessoa"
