@@ -12,11 +12,11 @@ revised as (
         OrderQty            as order_quantity,
         ProductID           as product_id,
         SpecialOfferID      as special_offer_id,
-        UnitPrice           as unit_price,
-        UnitPriceDiscount   as unit_price_discount,
-        LineTotal           as line_total,
+        cast(UnitPrice as decimal (18,2))           as unit_price,
+        cast(UnitPriceDiscount as decimal(18,2))   as unit_price_discount,
+        cast(LineTotal as decimal(18,2))           as line_total,
         rowguid            as row_guid,
-        ModifiedDate        as modified_date
+        cast(ModifiedDate as date)        as modified_date
     from source
 
 )

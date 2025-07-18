@@ -24,13 +24,13 @@ renamed as (
         CreditCardID        as credit_card_id,
         CreditCardApprovalCode as credit_card_approval_code,
         CurrencyRateID      as currency_rate_id,
-        SubTotal            as sub_total,
-        TaxAmt              as tax_amount,
-        Freight             as freight,
-        TotalDue            as total_due,
+        cast(SubTotal as decimal(18,2))            as sub_total,
+        cast(TaxAmt as decimal(18,2))              as tax_amount,
+        cast(Freight as decimal(18,2))             as freight,
+        cast(TotalDue as decimal(18,2))            as total_due,
         Comment             as comment,
         rowguid            as row_guid,
-        ModifiedDate        as modified_date
+        cast(ModifiedDate as date)        as modified_date
 
     from source
 

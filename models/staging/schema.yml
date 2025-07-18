@@ -21,6 +21,10 @@ sources:
         loaded_at_field: ModifiedDate
       - name: raw_sqlserver_sales_currencyrate_db
         loaded_at_field: ModifiedDate
+      - name: raw_sqlserver_sales_customer_db
+        loaded_at_field: ModifiedDate
+      - name: raw_sqlserver_person_person_db
+        loaded_at_field: ModifiedDate
 
 models:
   - name: stg_sales_order_header
@@ -42,4 +46,10 @@ models:
     description: "Tabela de staging com os detalhes dos vendedores"
 
   - name: stg_sales_currency_rate
-    description: "Tabela de staging com as taxas de câmbio de vendas"
+    description: "Tabela de staging com as taxas de câmbio de vendasss"
+
+  - name: stg_sales_customer_info
+    description: "Tabela de staging com as informações dos clientes"
+
+  - name: stg_person_person_details
+    description: "Tabela de staging com os detalhes das pessoas"
