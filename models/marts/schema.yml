@@ -1,8 +1,8 @@
 version: 2
 
 models:
-  - name: fact_sales_order_header
-    description: "Tabela fato de vendas consolidada"
+  - name: fact_sales_order
+    description: "Fato de vendas, baseado na staging stg_sales_order_details"
 
   - name: dim_date
     description: "Dimensão de datas usada para análises temporais"
@@ -12,3 +12,9 @@ models:
 
   - name: dim_salesperson
     description: "Dimensão de vendedores, baseada na staging stg_sales_person_details"
+  
+  - name: dim_costumer
+    description: "Dimensão de clientes, baseada na staging stg_sales_customer_details"
+
+  - name: dim_ship_method
+    description: "Dimensão de métodos de envio, baseada na staging stg_shipping_method_details"
