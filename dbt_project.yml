@@ -21,9 +21,9 @@ clean-targets:
 models:
   dbt_checkpoint3_dw:
     staging:
-      +schema: "{{ env_var('DATABRICKS_SCHEMA_STAGING') }}"
+      +schema: "{{ var('DATABRICKS_SCHEMA_STAGING') }}"
       +materialized: view
 
     marts:
-      +schema: "{{ env_var('DATABRICKS_SCHEMA_MARTS') }}"
+      +schema: "{{ var('DATABRICKS_SCHEMA_MARTS') }}"
       +materialized: table
