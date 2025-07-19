@@ -4,8 +4,8 @@ version: 2
 
 sources:
   - name: databricks_dw_aw
-    database: "{{ var('DATABRICKS_CATALOG') }}"
-    schema: "{{ var('DATABRICKS_SCHEMA_RAW') }}"
+    database: "{{ env_var('DATABRICKS_CATALOG') }}"
+    schema: "{{ env_var('DATABRICKS_SCHEMA_RAW') }}"
     tables:
       - name: raw_sqlserver_sales_salesorderheader_db
         loaded_at_field: ModifiedDate
@@ -29,6 +29,9 @@ sources:
 models:
   - name: stg_sales_order_header
     description: "Tabela de staging com os pedidos de venda"
+    test:
+      - not_null:
+          column_name: order_id
     Columns:
       - name: order_id
         description: "ID do pedido de venda"
@@ -83,6 +86,9 @@ models:
       
   - name: stg_sales_order_detail
     description: "Tabela de staging com os detalhes dos pedidos de venda"
+    test:
+      - not_null:
+          column_name: order_id
     Columns:
       - name: order_id
         description: "ID do pedido de venda"
@@ -107,6 +113,9 @@ models:
 
   - name: stg_production_product_details
     description: "Tabela de staging com os detalhes dos produtos"
+    test:
+      - not_null:
+          column_name: product_id
     Columns:
       - name: product_id
         description: "ID do produto"
@@ -162,6 +171,9 @@ models:
 
   - name: stg_sales_territory
     description: "Tabela de staging com os territórios de vendas"
+    test:
+      - not_null:
+          column_name: territory_id
     Columns:
       - name: territory_id
         description: "ID do território de vendas"
@@ -184,6 +196,9 @@ models:
 
   - name: stg_sales_ship_method
     description: "Tabela de staging com os territórios de vendas"
+    test:
+      - not_null:
+          column_name: ship_method_id
     Columns:
       - name: ship_method_id
         description: "ID do método de envio"
@@ -200,6 +215,9 @@ models:
 
   - name: stg_sales_person_details
     description: "Tabela de staging com os detalhes dos vendedores"
+    test:
+      - not_null:
+          column_name: sales_person_id
     Columns:
       - name: sales_person_id
         description: "ID do vendedor"
@@ -248,6 +266,9 @@ models:
 
   - name: stg_sales_currency_rate
     description: "Tabela de staging com as taxas de câmbio de vendasss"
+    test:
+      - not_null:
+          column_name: currency_rate_id
     Columns:
       - name: currency_rate_id
         description: "ID da taxa de câmbio"
@@ -266,6 +287,9 @@ models:
 
   - name: stg_sales_customer_info
     description: "Tabela de staging com as informações dos clientes"
+    test:
+      - not_null:
+          column_name: customer_id
     Columns:
       - name: customer_id
         description: "ID do cliente"
@@ -284,6 +308,9 @@ models:
 
   - name: stg_person_person_details
     description: "Tabela de staging com os detalhes das pessoas"
+    test:
+      - not_null:
+          column_name: person_id
     Columns:
       - name: person_id
         description: "ID da pessoa"
