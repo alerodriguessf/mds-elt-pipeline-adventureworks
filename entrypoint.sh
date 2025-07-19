@@ -6,8 +6,9 @@ source .env
 export DATABRICKS_HOST=$DATABRICKS_HOST
 export DATABRICKS_TOKEN=$DATABRICKS_TOKEN
 export DATABRICKS_CATALOG=$DATABRICKS_CATALOG
-export DATABRICKS_SCHEMA_RAW=$DATABRICKS_SCHEMA
+export DATABRICKS_SCHEMA_RAW=$DATABRICKS_SCHEMA_RAW
 export DATABRICKS_VOLUME=$DATABRICKS_VOLUME
+export DATABRICKS_BASE_PATH=dbfs:/Volumes/${DATABRICKS_CATALOG}/${DATABRICKS_SCHEMA_RAW}/${DATABRICKS_VOLUME}
 
 echo "✅ Variáveis de ambiente carregadas com sucesso"
 echo "----------------------------------------------"
@@ -19,10 +20,13 @@ echo "----------------------------------------------"
 echo "🚀 Extraindo dados do SQL Server..."
 meltano run tap-mssql target-parquet-sqlserver
 
+echo "🧹 Limpando diretório anterior do SQL Server no DBFS..."
+databricks fs rm -r ${DATABRICKS_BASE_PATH}/sqlserver || true
+
 echo "📤 Enviando arquivos SQL Server para o Databricks..."
 databricks fs cp \
   output/docker_elt/sqlserver/ \
-  dbfs:/Volumes/${DATABRICKS_CATALOG}/${DATABRICKS_SCHEMA}/${DATABRICKS_VOLUME}/sqlserver/ \
+  ${DATABRICKS_BASE_PATH}/sqlserver/ \
   --recursive
 
 echo "✅ SQL Server carregado com sucesso!"
@@ -35,13 +39,16 @@ echo "----------------------------------------------"
 echo "🚀 Extraindo dados da API..."
 meltano run tap-rest-api-msdk target-parquet-api
 
+echo "🧹 Limpando diretório anterior da API no DBFS..."
+databricks fs rm -r ${DATABRICKS_BASE_PATH}/api || true
+
 echo "📤 Enviando arquivos da API para o Databricks..."
 databricks fs cp \
   output/docker_elt/api/ \
-  dbfs:/Volumes/${DATABRICKS_CATALOG}/${DATABRICKS_SCHEMA}/${DATABRICKS_VOLUME}/api/ \
+  ${DATABRICKS_BASE_PATH}/api/ \
   --recursive
 
 echo "✅ API carregada com sucesso!"
 echo "----------------------------------------------"
 
-echo "🎉 Processo de ELT finalizado com sucesso!"
+echo "🎉 Processo de EL finalizado com sucesso!"

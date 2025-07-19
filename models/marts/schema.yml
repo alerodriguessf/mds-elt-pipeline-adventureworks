@@ -3,8 +3,12 @@ version: 2
 models:
   - name: fact_sales_order_header
     description: "Tabela fato de vendas consolidada"
-    columns:
-      - name: id_pedido
-        description: "Chave primária do pedido"
-      - name: id_cliente
-        description: "ID do cliente associado"
+
+  - name: dim_date
+    description: "Dimensão de datas usada para análises temporais"
+
+  - name: dim_product
+    description: "Dimensão de produtos, baseada na staging stg_production_product_details"
+
+  - name: dim_salesperson
+    description: "Dimensão de vendedores, baseada na staging stg_sales_person_details"
