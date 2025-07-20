@@ -34,11 +34,13 @@ A arquitetura foi desenhada para ser desacoplada e robusta, dividindo o fluxo de
 | `Delta Lake` | Garante governança, performance e confiabilidade aos dados | Todas |
 | `Databricks Workflows`| Agenda e executa a pipeline completa de forma automatizada | Orquestração |
 
+
+
 ---
 
 ## 3. Configuração e Execução
 
-Para executar a pipeline completa localmente, siga as etapas abaixo.
+Para executar a pipeline completa localmente, siga as etapas abaixo na ordem correta.
 
 ### 3.1 Pré-requisitos
 
@@ -55,9 +57,30 @@ git clone [https://github.com/alerodriguessf/lighthouse_desafio03_alexandrersf](
 cd lighthouse_desafio03_alexandrersf
 ````
 
-### 3.3 Configurar Variáveis de Ambiente
+### 3.3 Preparar Ambiente Virtual e Dependências
 
-Crie um arquivo `.env` na raiz do projeto a partir do modelo `.env.save`. Este arquivo centraliza todas as credenciais e configurações.
+Antes de configurar as credenciais, prepare seu ambiente de desenvolvimento local.
+
+**1. Criar o Ambiente Virtual:**
+
+```bash
+python -m venv venv
+source venv/bin/activate  # Linux/macOS
+# ou
+venv\Scripts\activate     # Windows
+```
+
+**2. Instalar as Dependências:**
+
+```bash
+pip install -r requirements.txt
+```
+
+### 3.4 Configurar Credenciais
+
+**1. Variáveis de Ambiente para Ingestão (`.env`):**
+
+Crie um arquivo `.env` na raiz do projeto a partir do modelo `.env.save`. Este arquivo centraliza as credenciais para a etapa de ingestão com Docker e Meltano.
 
 ```env
 # CREDENCIAIS DE INGESTÃO (CHECKPOINT 2)
@@ -80,45 +103,9 @@ DATABRICKS_TOKEN=your_pat_token
 
 > 🔐 **Importante**: Não versione este arquivo com Git. Ele já está incluído no `.gitignore`.
 
-### 3.4 Etapa 1: Ingestão de Dados (Meltano & Docker)
+**2. Profile do dbt (`profiles.yml`):**
 
-Esta etapa extrai os dados das fontes e os carrega como arquivos Parquet no Databricks.
-
-**1. Construir a Imagem Docker:**
-
-```bash
-docker build -t lighthouse-ingestion-pipeline .
-```
-
-**2. Executar o Contêiner de Ingestão:**
-
-```bash
-docker run --env-file .env lighthouse-ingestion-pipeline
-```
-
-Este comando executa o script `entrypoint.sh`, que realiza a extração via Meltano e o upload dos arquivos `.parquet` para o DBFS.
-
-### 3.5 Etapa 2: Transformação de Dados (dbt)
-
-Com os dados brutos no Databricks, esta etapa executa as transformações para criar os modelos analíticos.
-
-**1. Criar o Ambiente Virtual:**
-
-```bash
-python -m venv venv
-source venv/bin/activate  # Linux/macOS
-# ou
-venv\Scripts\activate     # Windows
-```
-
-**2. Instalar as Dependências:**
-
-```bash
-pip install -r requirements.txt
-```
-
-**3. Configurar o Profile do dbt:**
-Crie o arquivo `~/.dbt/profiles.yml` com suas credenciais do Databricks. O dbt o utilizará para se conectar ao seu workspace.
+Crie o arquivo `~/.dbt/profiles.yml` para que o dbt possa se conectar ao seu workspace Databricks.
 
 ```yaml
 dbt_checkpoint3_dw:
@@ -133,22 +120,43 @@ dbt_checkpoint3_dw:
       token: <seu-personal-access-token>
 ```
 
-**4. Executar os Comandos dbt:**
+### 3.5 Executando a Pipeline
 
-```bash
-# Instalar dependências do projeto dbt (se houver)
-dbt deps
+**Etapa 1: Ingestão de Dados (Meltano & Docker)**
 
-# Executar os modelos (camadas Bronze -> Silver -> Gold)
-dbt run
+Esta etapa extrai os dados das fontes e os carrega como arquivos Parquet no Databricks.
 
-# Rodar os testes de qualidade de dados
-dbt test
+  * **Construir a Imagem Docker:**
 
-# Gerar e servir a documentação localmente
-dbt docs generate
-dbt docs serve
-```
+    ```bash
+    docker build -t lighthouse-ingestion-pipeline .
+    ```
+
+  * **Executar o Contêiner de Ingestão:**
+
+    ```bash
+    docker run --env-file .env lighthouse-ingestion-pipeline
+    ```
+
+**Etapa 2: Transformação de Dados (dbt)**
+
+Com os dados brutos no Databricks, esta etapa executa as transformações para criar os modelos analíticos.
+
+  * **Executar os Comandos dbt:**
+    ```bash
+    # Instalar dependências do projeto dbt (se houver)
+    dbt deps
+
+    # Executar os modelos (camadas Bronze -> Silver -> Gold)
+    dbt run
+
+    # Rodar os testes de qualidade de dados
+    dbt test
+
+    # Gerar e servir a documentação localmente
+    dbt docs generate
+    dbt docs serve
+    ```
 
 -----
 
@@ -181,7 +189,7 @@ Os arquivos `schema.yml` em cada diretório contêm testes de integridade (`not_
 
 -----
 
-## 5. Orquestração e Reprodutibilidade com Databricks Workflows
+## 5\. Orquestração e Reprodutibilidade com Databricks Workflows
 
 A automação da pipeline é gerenciada pelo **Databricks Workflows**, garantindo que os dados sejam processados de forma agendada, confiável e na ordem correta. Toda a configuração do workflow está definida de forma declarativa no arquivo `databricks_pipeline.yml`, localizado na raiz deste repositório.
 
@@ -249,5 +257,3 @@ Este projeto foi desenvolvido por **Alexandre R. Silva Filho** como parte do pro
   * **Email:** [alexandre.filho@indicium.tech](mailto:alexandre.filho@indicium.tech)
   * **LinkedIn:** [https://www.linkedin.com/in/alerodriguessf](https://www.linkedin.com/in/alerodriguessf/)
   * **GitHub:** [github.com/alerodriguessf](https://github.com/alerodriguessf)
-
-<!-- end list -->
