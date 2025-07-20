@@ -19,7 +19,7 @@ A arquitetura foi desenhada para ser desacoplada e robusta, dividindo o fluxo de
 2.  **Upload para o Lakehouse:** O **Databricks CLI**, também no contêiner, carrega os arquivos Parquet para o Databricks File System (DBFS).
 3.  **Camada Bronze:** Notebooks no Databricks convertem os dados Parquet para o formato **Delta Lake**, criando as tabelas da camada Bronze e garantindo transações ACID, versionamento e performance.
 4.  **Camadas Silver e Gold (T):** O **dbt** assume o controle para executar as transformações. Ele lê os dados da camada Bronze e aplica regras de negócio, limpeza e modelagem dimensional para criar as camadas Silver (staging) e Gold (marts).
-5.  **Orquestração:** O **Databricks Jobs & Pipeline** automatiza todo o processo, desde a conversão para Delta até a execução dos modelos dbt, garantindo que os dados sejam atualizados de forma agendada e confiável.
+5.  **Orquestração:** O **Databricks Jobs & Pipelines** automatiza todo o processo, desde a conversão para Delta até a execução dos modelos dbt, garantindo que os dados sejam atualizados de forma agendada e confiável.
 
 ### 🔧 Componentes Técnicos
 
@@ -32,7 +32,7 @@ A arquitetura foi desenhada para ser desacoplada e robusta, dividindo o fluxo de
 | `Databricks Notebooks` | Converte Parquet em tabelas Delta (Camada Bronze) | Orquestração |
 | `dbt (Data Build Tool)` | Orquestra, testa e documenta as transformações SQL | Transformação |
 | `Delta Lake` | Garante governança, performance e confiabilidade aos dados | Todas |
-| `Databricks Jobs & Pipeliness`| Agenda e executa a pipeline completa de forma automatizada | Orquestração |
+| `Databricks Jobs & Pipelines`| Agenda e executa a pipeline completa de forma automatizada | Orquestração |
 
 
 
