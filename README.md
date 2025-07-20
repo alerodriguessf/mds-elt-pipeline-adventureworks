@@ -32,7 +32,7 @@ A arquitetura foi desenhada para ser desacoplada e robusta, dividindo o fluxo de
 | `Databricks Notebooks` | Converte Parquet em tabelas Delta (Camada Bronze) | Orquestração |
 | `dbt (Data Build Tool)` | Orquestra, testa e documenta as transformações SQL | Transformação |
 | `Delta Lake` | Garante governança, performance e confiabilidade aos dados | Todas |
-| `Databricks Workflows`| Agenda e executa a pipeline completa de forma automatizada | Orquestração |
+| `Databricks Jobs & Pipeliness`| Agenda e executa a pipeline completa de forma automatizada | Orquestração |
 
 
 
@@ -191,13 +191,13 @@ Os arquivos `schema.yml` em cada diretório contêm testes de integridade (`not_
 
 ## 5\. Orquestração e Reprodutibilidade com Databricks Jobs & Pipelines
 
-A automação da pipeline é gerenciada pelo **Databricks Jobs & Pipelines**, garantindo que os dados sejam processados de forma agendada, confiável e na ordem correta. Toda a configuração do workflow está definida de forma declarativa no arquivo `databricks_pipeline.yml`, localizado na raiz deste repositório.
+A automação da pipeline é gerenciada pelo **Databricks Jobs & Pipelines**, garantindo que os dados sejam processados de forma agendada, confiável e na ordem correta. Toda a configuração do Jobs & Pipelines está definida de forma declarativa no arquivo `databricks_pipeline.yml`, localizado na raiz deste repositório.
 
 Essa abordagem permite que a orquestração seja versionada junto com o código e facilmente replicada.
 
-### 5.1 Estrutura e Dependências do Workflow
+### 5.1 Estrutura e Dependências do Jobs & Pipelines
 
-O workflow é composto por tarefas que executam notebooks e o pipeline dbt. As dependências entre elas garantem a integridade do fluxo de ponta a ponta.
+O Jobs & Pipelines é composto por tarefas que executam notebooks e o pipeline dbt. As dependências entre elas garantem a integridade do fluxo de ponta a ponta.
 
 | Chave da Tarefa | Tipo de Tarefa | Descrição |
 | :--- | :--- | :--- |
@@ -226,7 +226,7 @@ Em vez de usar a CLI, você pode criar o job diretamente na interface do Databri
 7.  **Cole o conteúdo** no editor YAML dentro do Databricks.
 8.  Clique em **Save**.
 
-Pronto\! O seu workflow será criado com todas as tarefas, dependências e configurações definidas no arquivo. Agora você pode executá-lo manualmente ou aguardar a execução agendada.
+Pronto\! O seu Jobs & Pipelines será criado com todas as tarefas, dependências e configurações definidas no arquivo. Agora você pode executá-lo manualmente ou aguardar a execução agendada.
 
 -----
 
