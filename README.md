@@ -18,8 +18,8 @@ A arquitetura foi desenhada para ser desacoplada e robusta, dividindo o fluxo de
 1.  **Extração e Carga (EL):** O **Meltano**, orquestrado dentro de um contêiner **Docker**, extrai dados das fontes (MSSQL e API). Os dados são materializados como arquivos **Parquet**.
 2.  **Upload para o Lakehouse:** O **Databricks CLI**, também no contêiner, carrega os arquivos Parquet para o Databricks File System (DBFS).
 3.  **Camada Bronze:** Notebooks no Databricks convertem os dados Parquet para o formato **Delta Lake**, criando as tabelas da camada Bronze e garantindo transações ACID, versionamento e performance.
-4.  **Camadas Silver e Gold (T):** O **dbt** assume o controle para executar as transformações. Ele lê os dados da camada Bronze e aplica regras de negócio, limpeza e modelagem dimensional (Kimball) para criar as camadas Silver (staging) e Gold (marts).
-5.  **Orquestração:** O **Databricks Workflows** automatiza todo o processo, desde a conversão para Delta até a execução dos modelos dbt, garantindo que os dados sejam atualizados de forma agendada e confiável.
+4.  **Camadas Silver e Gold (T):** O **dbt** assume o controle para executar as transformações. Ele lê os dados da camada Bronze e aplica regras de negócio, limpeza e modelagem dimensional para criar as camadas Silver (staging) e Gold (marts).
+5.  **Orquestração:** O **Databricks Jobs & Pipeline** automatiza todo o processo, desde a conversão para Delta até a execução dos modelos dbt, garantindo que os dados sejam atualizados de forma agendada e confiável.
 
 ### 🔧 Componentes Técnicos
 
