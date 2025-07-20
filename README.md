@@ -47,7 +47,7 @@ Para executar a pipeline completa localmente, siga as etapas abaixo na ordem cor
 * [Docker Desktop](https://www.docker.com/products/docker-desktop/) (v4.x+)
 * [Git](https://git-scm.com/)
 * [Python 3.10 ou 3.11](https://www.python.org/) e `pip`
-* Acesso a um workspace **Databricks** (Community Edition ou superior)
+* Acesso a um workspace **Databricks** (Free Edition ou superior)
 * Credenciais para o banco **MSSQL** e para a **API REST**
 
 ### 3.2 Clonar o Repositório
