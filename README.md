@@ -189,9 +189,9 @@ Os arquivos `schema.yml` em cada diretório contêm testes de integridade (`not_
 
 -----
 
-## 5\. Orquestração e Reprodutibilidade com Databricks Workflows
+## 5\. Orquestração e Reprodutibilidade com Databricks Jobs & Pipelines
 
-A automação da pipeline é gerenciada pelo **Databricks Workflows**, garantindo que os dados sejam processados de forma agendada, confiável e na ordem correta. Toda a configuração do workflow está definida de forma declarativa no arquivo `databricks_pipeline.yml`, localizado na raiz deste repositório.
+A automação da pipeline é gerenciada pelo **Databricks Jobs & Pipelines**, garantindo que os dados sejam processados de forma agendada, confiável e na ordem correta. Toda a configuração do workflow está definida de forma declarativa no arquivo `databricks_pipeline.yml`, localizado na raiz deste repositório.
 
 Essa abordagem permite que a orquestração seja versionada junto com o código e facilmente replicada.
 
@@ -213,11 +213,11 @@ A sequência de execução é a seguinte:
 [delta_conversion_sqlserver] ┘
 ```
 
-### 5.2 Como Implantar o Workflow no Databricks
+### 5.2 Como Implantar a Pipeline no Databricks
 
 Em vez de usar a CLI, você pode criar o job diretamente na interface do Databricks de forma simples:
 
-1.  **Acesse o seu Workspace Databricks** e navegue até a seção **Workflows**.
+1.  **Acesse o seu Workspace Databricks** e navegue até a seção **Jobs & Pipelines**.
 2.  Clique no botão **Create Job**.
 3.  Dê um nome ao seu Job (ex: `lighthouse_pipeline_dbt`).
 4.  Na tela de configuração da primeira tarefa, procure e clique na opção **Edit YAML**.
