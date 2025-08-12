@@ -1,0 +1,31 @@
+version: 2
+
+models:
+  - name: fact_sales_summary_monthly
+    description: "Fato de resumo de vendas mensais, baseado na staging stg_sales"
+    tests:
+      - not_null:
+          column_name: year_month
+      - unique:
+          column_name: (year_month, territory_id, is_online_order)
+    Columns:
+      - name: year_month
+        description: "Ano e mês do resumo de vendas (formato YYYY-MM)"
+      - name: territory_id
+        description: "ID do território de vendas"
+      - name: territory_name
+        description: "Nome do território de vendas"
+      - name: is_online_order
+        description: "Indica se o resumo de vendas é para pedidos online (booleano)"
+      - name: total_orders
+        description: "Total de pedidos de venda no mês"
+      - name: total_items_sold
+        description: "Total de itens vendidos no mês"
+      - name: revenue
+        description: "Receita total do mês (soma de gross_revenue dos pedidos)"
+      - name: freight_total
+        description: "Total de frete no mês (soma de freight_charge dos pedidos)"
+      - name: tax_total
+        description: "Total de impostos no mês (soma de tax_charge dos pedidos)"
+      - name: average_order_value
+        description: "Valor médio dos pedidos no mês (receita total / total de pedidos)"

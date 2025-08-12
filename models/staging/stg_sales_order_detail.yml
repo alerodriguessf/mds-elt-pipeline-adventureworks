@@ -1,0 +1,38 @@
+
+version: 2
+
+sources:
+  - name: databricks_dw_aw
+    database: "{{ env_var('DATABRICKS_CATALOG') }}"
+    schema: "{{ env_var('DATABRICKS_SCHEMA_RAW') }}"
+    tables:
+      - name: raw_sqlserver_sales_salesorderdetail_db
+        loaded_at_field: ModifiedDate
+
+models:
+  - name: stg_sales_order_detail
+    description: "Tabela de staging com os detalhes dos pedidos de venda"
+    test:
+      - not_null:
+          column_name: order_id
+    Columns:
+      - name: order_id
+        description: "ID do pedido de venda"
+      - name: order_detail_id
+        description: "ID do detalhe do pedido"
+      - name: order_quantity
+        description: "Quantidade do pedido"
+      - name: product_id
+        description: "ID do produto"
+      - name: special_offer_id
+        description: "ID da oferta especial"
+      - name: unit_price
+        description: "Preço unitário do produto"
+      - name: unit_price_discount
+        description: "Desconto no preço unitário"
+      - name: line_total
+        description: "Total da linha do pedido"
+      - name: row_guid
+        description: "GUID da linha do detalhe do pedido"
+      - name: modified_date
+        description: "Data de modificação do detalhe do pedido"

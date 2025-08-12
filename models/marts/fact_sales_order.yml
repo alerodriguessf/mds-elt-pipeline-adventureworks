@@ -1,0 +1,45 @@
+version: 2
+
+models:
+  - name: fact_sales_order
+    description: "Fato de vendas, baseado na staging stg_sales_order_details"
+    tests:
+      - not_null:
+          column_name: order_id
+    Columns:
+      - name: order_id
+        description: "ID do pedido de venda"
+      - name: order_detail_id
+        description: "ID do detalhe do pedido de venda"
+      - name: product_id
+        description: "ID do produto"
+      - name: customer_id
+        description: "ID do cliente"
+      - name: salesperson_id
+        description: "ID do vendedor"
+      - name: territory_id
+        description: "ID do território de vendas"
+      - name: order_date
+        description: "Data do pedido de venda"
+      - name: due_date
+        description: "Data de vencimento do pedido de venda"
+      - name: ship_date
+        description: "Data de envio do pedido de venda"
+      - name: ship_method_id
+        description: "ID do método de envio"
+      - name: currency_rate_id
+        description: "ID da taxa de câmbio"
+      - name: order_quantity
+        description: "Quantidade do pedido de venda"
+      - name: unit_price
+        description: "Preço unitário do produto no pedido de venda"
+      - name: unit_price_discount
+        description: "Desconto aplicado ao preço unitário do produto no pedido de venda"
+      - name: line_total
+        description: "Total da linha do pedido de venda (quantidade * preço unitário - desconto)"
+      - name: gross_revenue
+        description: "Receita bruta do pedido de venda (total da linha * taxa de câmbio)" 
+      - name: is_online_order
+        description: "Indica se o pedido de venda foi feito online (booleano)"
+      - name: ingestion_timestamp
+        description: "Timestamp de ingestão do dado no sistema"

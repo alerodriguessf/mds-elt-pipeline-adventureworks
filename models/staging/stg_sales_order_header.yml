@@ -1,0 +1,67 @@
+version: 2
+
+sources:
+  - name: databricks_dw_aw
+    database: "{{ env_var('DATABRICKS_CATALOG') }}"
+    schema: "{{ env_var('DATABRICKS_SCHEMA_RAW') }}"
+    tables:
+      - name: raw_sqlserver_sales_salesorderheader_db
+        loaded_at_field: ModifiedDate
+
+models:
+  - name: stg_sales_order_header
+    description: "Tabela de staging com os pedidos de venda"
+    test:
+      - not_null:
+          column_name: order_id
+    Columns:
+      - name: order_id
+        description: "ID do pedido de venda"
+      - name: nm_revisao
+        description: "Número de revisão do pedido"
+      - name: order_date
+        description: "Data do pedido"
+      - name: due_date
+        description: "Data de vencimento do pedido"
+      - name: ship_date
+        description: "Data de envio do pedido"
+      - name: is_online_order
+        description: "Indica se o pedido é online"
+      - name: order_number
+        description: "Número do pedido"
+      - name: purchase_order_number
+        description: "Número da ordem de compra"
+      - name: account_number
+        description: "Número da conta do cliente"
+      - name: customer_id
+        description: "ID do cliente"
+      - name: sales_person_id
+        description: "ID do vendedor"
+      - name: territory_id
+        description: "ID do território de vendas"
+      - name: bill_to_address_id
+        description: "ID do endereço de cobrança"
+      - name: ship_to_address_id
+        description: "ID do endereço de envio"
+      - name: ship_method_id
+        description: "ID do método de envio"
+      - name: credit_card_id
+        description: "ID do cartão de crédito"
+      - name: credit_card_approval_code
+        description: "Código de aprovação do cartão de crédito"
+      - name: currency_rate_id
+        description: "ID da taxa de câmbio"
+      - name: sub_total
+        description: "Subtotal do pedido"
+      - name: tax_amount
+        description: "Valor do imposto sobre o pedido"
+      - name: freight
+        description: "Frete do pedido"
+      - name: total_due
+        description: "Total devido do pedido"
+      - name: comment
+        description: "Comentário sobre o pedido"
+      - name: row_guid
+        description: "GUID da linha do pedido"
+      - name: modified_date
+        description: "Data de modificação do pedido"

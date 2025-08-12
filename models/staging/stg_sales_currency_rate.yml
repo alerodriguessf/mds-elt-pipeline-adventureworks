@@ -1,0 +1,32 @@
+
+version: 2
+
+sources:
+  - name: databricks_dw_aw
+    database: "{{ env_var('DATABRICKS_CATALOG') }}"
+    schema: "{{ env_var('DATABRICKS_SCHEMA_RAW') }}"
+    tables:
+      - name: raw_sqlserver_sales_currencyrate_db
+        loaded_at_field: ModifiedDate
+
+models:
+  - name: stg_sales_currency_rate
+    description: "Tabela de staging com as taxas de câmbio de vendasss"
+    test:
+      - not_null:
+          column_name: currency_rate_id
+    Columns:
+      - name: currency_rate_id
+        description: "ID da taxa de câmbio"
+      - name: currency_rate_date
+        description: "Data da taxa de câmbio"
+      - name: from_currency_code
+        description: "Código da moeda de origem"
+      - name: to_currency_code
+        description: "Código da moeda de destino"
+      - name: average_rate
+        description: "Taxa média de câmbio"
+      - name: end_of_day_rate
+        description: "Taxa de câmbio do final do dia"
+      - name: modified_date
+        description: "Data de modificação da taxa de câmbio"

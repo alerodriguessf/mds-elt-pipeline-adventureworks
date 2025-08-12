@@ -1,0 +1,45 @@
+
+
+version: 2
+
+sources:
+  - name: databricks_dw_aw
+    database: "{{ env_var('DATABRICKS_CATALOG') }}"
+    schema: "{{ env_var('DATABRICKS_SCHEMA_RAW') }}"
+    tables:
+      - name: raw_sqlserver_person_person_db
+        loaded_at_field: ModifiedDate
+        
+models:
+  - name: stg_person_person_details
+    description: "Tabela de staging com os detalhes das pessoas"
+    test:
+      - not_null:
+          column_name: person_id
+    Columns:
+      - name: person_id
+        description: "ID da pessoa"
+      - name: person_type
+        description: "Tipo de pessoa (por exemplo, cliente, funcionário)"
+      - name: name_style
+        description: "Estilo do nome da pessoa"
+      - name: title
+        description: "Título da pessoa"
+      - name: first_name
+        description: "Primeiro nome da pessoa"
+      - name: middle_name
+        description: "Nome do meio da pessoa"
+      - name: last_name
+        description: "Último nome da pessoa"
+      - name: suffix
+        description: "Sufixo do nome da pessoa"
+      - name: email_promotion
+        description: "Promoção por e-mail da pessoa"
+      - name: additional_contact_info
+        description: "Informações de contato adicionais da pessoa"
+      - name: demographics
+        description: "Demografia da pessoa"
+      - name: row_guid
+        description: "GUID da linha da pessoa"
+      - name: modified_date
+        description: "Data de modificação da pessoa"

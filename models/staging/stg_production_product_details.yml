@@ -1,0 +1,67 @@
+version: 2
+
+sources:
+  - name: databricks_dw_aw
+    database: "{{ env_var('DATABRICKS_CATALOG') }}"
+    schema: "{{ env_var('DATABRICKS_SCHEMA_RAW') }}"
+    tables:
+      - name: raw_sqlserver_production_product_db
+        loaded_at_field: ModifiedDate
+
+models:
+  - name: stg_production_product_details
+    description: "Tabela de staging com os detalhes dos produtos"
+    test:
+      - not_null:
+          column_name: product_id
+    Columns:
+      - name: product_id
+        description: "ID do produto"
+      - name: product_name  
+        description: "Nome do produto"
+      - name: product_number
+        description: "Número do produto"
+      - name: is_make
+        description: "Indica se o produto é fabricado"
+      - name: is_finished_good
+        description: "Indica se o produto é um produto acabado"
+      - name: product_color
+        description: "Cor do produto"
+      - name: safety_stock_level
+        description: "Nível de estoque de segurança do produto"
+      - name: reorder_point
+        description: "Ponto de reabastecimento do produto"
+      - name: standard_cost
+        description: "Custo padrão do produto"
+      - name: list_price
+        description: "Preço de lista do produto"
+      - name: product_size
+        description: "Tamanho do produto"
+      - name: size_unit_measure_code
+        description: "Código da unidade de medida do tamanho"
+      - name: weight_unit_measure_code
+        description: "Código da unidade de medida do peso"
+      - name: product_weight
+        description: "Peso do produto" 
+      - name: days_to_manufacture
+        description: "Dias para fabricar o produto"
+      - name: product_line
+        description: "Linha do produto"
+      - name: product_class
+        description: "Classe do produto"
+      - name: product_style
+        description: "Estilo do produto"
+      - name: product_subcategory_id
+        description: "ID da subcategoria do produto"
+      - name: product_model_id
+        description: "ID do modelo do produto"
+      - name: sell_start_date
+        description: "Data de início de venda do produto"
+      - name: sell_end_date
+        description: "Data de término de venda do produto"
+      - name: discontinued_date
+        description: "Data de descontinuação do produto"
+      - name: row_guid
+        description: "GUID da linha do produto"
+      - name: modified_date
+        description: "Data de modificação do produto"

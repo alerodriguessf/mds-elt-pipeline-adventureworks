@@ -1,0 +1,30 @@
+
+version: 2
+
+sources:
+  - name: databricks_dw_aw
+    database: "{{ env_var('DATABRICKS_CATALOG') }}"
+    schema: "{{ env_var('DATABRICKS_SCHEMA_RAW') }}"
+    tables:
+      - name: raw_sqlserver_purchasing_shipmethod_db
+        loaded_at_field: ModifiedDate
+
+models: 
+  - name: stg_sales_ship_method
+    description: "Tabela de staging com os territórios de vendas"
+    test:
+      - not_null:
+          column_name: ship_method_id
+    Columns:
+      - name: ship_method_id
+        description: "ID do método de envio"
+      - name: ship_method_name
+        description: "Nome do método de envio"
+      - name: ship_base
+        description: "Custo base do envio"
+      - name: ship_rate
+        description: "Taxa de envio"
+      - name: row_guid
+        description: "GUID da linha do método de envio"
+      - name: modified_date
+        description: "Data de modificação do método de envio"

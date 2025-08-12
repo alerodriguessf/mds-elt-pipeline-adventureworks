@@ -1,0 +1,31 @@
+version: 2
+
+models:
+  - name: dim_salesperson
+    description: "Dimensão de vendedores, baseada na staging stg_sales_person_details"
+    tests:
+      - unique:
+          column_name: email_address
+    Columns:
+      - name: salesperson_id
+        description: "ID do vendedor"
+      - name: full_name
+        description: "Nome completo do vendedor" 
+      - name: job_title
+        description: "Cargo do vendedor"
+      - name: email_address
+        description: "Endereço de e-mail do vendedor"
+      - name: phone_number
+        description: "Número de telefone do vendedor"
+      - name: sales_quota
+        description: "Cota de vendas do vendedor"
+      - name: sales_ytd
+        description: "Vendas acumuladas do ano até a data atual"
+      - name: sales_last_year
+        description: "Vendas do vendedor no ano passado"
+      - name: territory_id
+        description: "ID do território de vendas do vendedor"
+      - name: territory_group
+        description: "Grupo de território ao qual o vendedor pertence"
+      - name: percentual_meta_batida
+        description: "Percentual da meta de vendas batida pelo vendedor"

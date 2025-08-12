@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name: dim_product
+    description: "Dimensão de produtos, baseada na staging stg_production_product_details"
+    tests:
+      - unique:
+          column_name: product_id
+    Columns:
+      - name: product_id
+        description: "ID do produto"
+      - name: product_name
+        description: "Nome do produto"
+      - name: is_make
+        description: "Indica se o produto é fabricado internamente (booleano)"
+      - name: is_finished_good
+        description: "Indica se o produto é um produto acabado (booleano)"
+      - name: product_color
+        description: "Cor do produto"
+      - name: standard_cost
+        description: "Custo padrão do produto"
+      - name: list_price
+        description: "Preço de lista do produto"
+      - name: product_line
+        description: "Linha de produtos a que o produto pertence"
+      - name: product_class
+        description: "Classe do produto"
+      - name: product_style
+        description: "Estilo do produto"
+      - name: product_subcategory_id
+        description: "ID da subcategoria do produto"
+      - name: product_model_id
+        description: "ID do modelo do produto"

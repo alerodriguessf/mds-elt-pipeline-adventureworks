@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: dim_ship_method
+    description: "Dimensão de métodos de envio, baseada na staging stg_shipping_method_details"
+    tests:
+      - unique:
+          column_name: ship_method_id
+    Columns:
+      - name: ship_method_id
+        description: "ID do método de envio"
+      - name: ship_method_name
+        description: "Nome do método de envio"
+      - name: ship_base
+        description: "Taxa base de envio"
+      - name: ship_rate
+        description: "Taxa de envio por unidade"
+      - name: modified_date
+        description: "Data da última modificação do método de envio"

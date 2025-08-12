@@ -1,0 +1,63 @@
+# models/staging/schema.yml
+
+version: 2
+
+sources:
+  - name: databricks_dw_aw
+    database: "{{ env_var('DATABRICKS_CATALOG') }}"
+    schema: "{{ env_var('DATABRICKS_SCHEMA_RAW') }}"
+    tables:
+      - name: raw_sqlserver_sales_vsalesperson_db
+        loaded_at_field: ModifiedDate
+
+models: 
+  - name: stg_sales_person_details
+    description: "Tabela de staging com os detalhes dos vendedores"
+    test:
+      - not_null:
+          column_name: sales_person_id
+    Columns:
+      - name: sales_person_id
+        description: "ID do vendedor"
+      - name: title
+        description: "Título do vendedor"
+      - name: first_name
+        description: "Primeiro nome do vendedor"
+      - name: middle_name
+        description: "Nome do meio do vendedor"
+      - name: last_name
+        description: "Último nome do vendedor"
+      - name: suffix
+        description: "Sufixo do nome do vendedor"
+      - name: job_title
+        description: "Cargo do vendedor"
+      - name: phone_number
+        description: "Telefone do vendedor"
+      - name: phone_number_type
+        description: "Tipo de telefone do vendedor"
+      - name: email_address
+        description: "Endereço de e-mail do vendedor"
+      - name: email_promotion
+        description: "Promoção por e-mail do vendedor"
+      - name: address_line_1
+        description: "Linha de endereço 1 do vendedor"
+      - name: address_line_2
+        description: "Linha de endereço 2 do vendedor"
+      - name: city
+        description: "Cidade do vendedor"
+      - name: state_province_name
+        description: "Estado ou província do vendedor"
+      - name: postal_code
+        description: "Código postal do vendedor"
+      - name: country_region_name
+        description: "Nome do país ou região do vendedor"
+      - name: territory_id
+        description: "ID do território do vendedor"
+      - name: territory_group
+        description: "Grupo do território do vendedor"
+      - name: sales_quota
+        description: "Cota de vendas do vendedor"
+      - name: sales_ytd
+        description: "Vendas acumuladas no ano do vendedor"
+      - name: sales_last_year
+        description: "Vendas do ano passado do vendedor"

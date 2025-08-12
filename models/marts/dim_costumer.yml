@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: dim_costumer
+    description: "Dimensão de clientes, baseada na staging stg_sales_customer_details"
+    tests:
+      - unique:
+          column_name: customer_id
+    Columns:
+      - name: customer_id
+        description: "ID do cliente"
+      - name: person_id
+        description: "ID da pessoa associada ao cliente"
+      - name: full_name
+        description: "Nome completo do cliente"
+      - name: territory_name
+        description: "Nome do território de vendas do cliente"
+      - name: territory_group
+        description: "Grupo de território ao qual o cliente pertence"
+      - name: country_region_code
+        description: "Código do país ou região do cliente"
+

@@ -1,0 +1,33 @@
+
+
+version: 2
+
+sources:
+  - name: databricks_dw_aw
+    database: "{{ env_var('DATABRICKS_CATALOG') }}"
+    schema: "{{ env_var('DATABRICKS_SCHEMA_RAW') }}"
+    tables:
+      - name: raw_sqlserver_sales_customer_db
+        loaded_at_field: ModifiedDate
+
+models:
+  - name: stg_sales_customer_info
+    description: "Tabela de staging com as informações dos clientes"
+    test:
+      - not_null:
+          column_name: customer_id
+    Columns:
+      - name: customer_id
+        description: "ID do cliente"
+      - name: person_id 
+        description: "ID da pessoa associada ao cliente"
+      - name: store_id
+        description: "ID da loja associada ao cliente"
+      - name: territory_id
+        description: "ID do território associado ao cliente"
+      - name: account_number
+        description: "Número da conta do cliente"
+      - name: row_guid
+        description: "GUID da linha do cliente"
+      - name: modified_date
+        description: "Data de modificação do cliente"
