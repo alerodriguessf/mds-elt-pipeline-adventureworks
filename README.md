@@ -1,89 +1,83 @@
 
-# 🚀 Pipeline de Transformação de Dados — Lighthouse Checkpoint 3
+# 🚀 Data Transformation Pipeline — Lighthouse Checkpoint 3
 
-## 1. Visão Geral do Projeto
+## 1. Project Overview
 
-Este projeto consolida os desafios **Lighthouse Checkpoint 2 e 3** da Indicium, implementando uma **pipeline de dados completa e moderna**. A solução abrange desde a ingestão de dados de múltiplas fontes até sua transformação e disponibilização para análise em uma arquitetura **Lakehouse**.
+This project consolidates the challenges from **Lighthouse Checkpoints 2 and 3** (Indicium), implementing a **modern end-to-end data pipeline**. The solution encompasses the entire flow, from data ingestion to transformation and analysis availability within a **Lakehouse architecture**.
 
-A pipeline realiza a ingestão de dados de um **banco de dados relacional (MSSQL)** e de uma **API REST** utilizando uma stack conteinerizada com **Meltano e Docker**. Posteriormente, esses dados são transformados, modelados e orquestrados no **Databricks** com **dbt (Data Build Tool)**, seguindo as melhores práticas de engenharia de dados.
+The pipeline ingests data from both a **relational database (MSSQL)** and a **REST API**, using a containerized stack built with **Meltano and Docker**. Once ingested, data is transformed, modeled, and orchestrated in **Databricks** using **dbt (Data Build Tool)**, adhering to data engineering best practices.
 
-O objetivo final é entregar um ecossistema de dados **confiável, modular, escalável e automatizado**, pronto para suportar análises de negócio complexas.
+The final goal is to deliver a **reliable, modular, scalable, and automated** data ecosystem, ready to support complex business analytics.
 
 ---
 
-## 2. Arquitetura da Solução
+## 2. Solution Architecture
 
-A arquitetura foi desenhada para ser desacoplada e robusta, dividindo o fluxo de dados em etapas claras e gerenciáveis.
+The architecture was designed to be decoupled and robust, splitting the flow into clear and manageable stages.
 
-1.  **Extração e Carga (EL):** O **Meltano**, orquestrado dentro de um contêiner **Docker**, extrai dados das fontes (MSSQL e API). Os dados são materializados como arquivos **Parquet**.
-2.  **Upload para o Lakehouse:** O **Databricks CLI**, também no contêiner, carrega os arquivos Parquet para o Databricks File System (DBFS).
-3.  **Camada Bronze:** Notebooks no Databricks convertem os dados Parquet para o formato **Delta Lake**, criando as tabelas da camada Bronze e garantindo transações ACID, versionamento e performance.
-4.  **Camadas Silver e Gold (T):** O **dbt** assume o controle para executar as transformações. Ele lê os dados da camada Bronze e aplica regras de negócio, limpeza e modelagem dimensional para criar as camadas Silver (staging) e Gold (marts).
-5.  **Orquestração:** O **Databricks Jobs & Pipelines** automatiza todo o processo, desde a conversão para Delta até a execução dos modelos dbt, garantindo que os dados sejam atualizados de forma agendada e confiável.
+1. **Extract & Load (EL):** **Meltano**, orchestrated inside a **Docker** container, extracts data from MSSQL and the API. Data is materialized as **Parquet files**.
+2. **Upload to Lakehouse:** The **Databricks CLI** uploads the Parquet files into the Databricks File System (DBFS).
+3. **Bronze Layer:** Databricks Notebooks convert Parquet files into **Delta Lake** tables, ensuring ACID transactions, versioning, and performance.
+4. **Silver & Gold Layers (T):** **dbt** takes over transformation, applying cleaning, business logic, and dimensional modeling to create Silver (staging) and Gold (marts) layers.
+5. **Orchestration:** **Databricks Jobs & Pipelines** automate the entire process, from Parquet-to-Delta conversion to dbt model execution, ensuring reliable and scheduled updates.
 
-### 🔧 Componentes Técnicos
+### 🔧 Tech Stack
 
-| Componente | Papel na Pipeline | Etapa |
+| Component | Role in Pipeline | Stage |
 | :--- | :--- | :--- |
-| `Meltano` | Extrai dados de fontes diversas com seus conectores (`taps`) | Ingestão |
-| `Docker` | Cria ambiente de ingestão reprodutível e isolado | Ingestão |
-| `Target Parquet` | Armazena dados extraídos em formato colunar otimizado | Ingestão |
-| `Databricks CLI` | Faz o upload dos dados brutos para o Lakehouse | Ingestão |
-| `Databricks Notebooks` | Converte Parquet em tabelas Delta (Camada Bronze) | Orquestração |
-| `dbt (Data Build Tool)` | Orquestra, testa e documenta as transformações SQL | Transformação |
-| `Delta Lake` | Garante governança, performance e confiabilidade aos dados | Todas |
-| `Databricks Jobs & Pipelines`| Agenda e executa a pipeline completa de forma automatizada | Orquestração |
-
-
+| `Meltano` | Extracts data from diverse sources via connectors (`taps`) | Ingestion |
+| `Docker` | Provides reproducible and isolated ingestion environment | Ingestion |
+| `Target Parquet` | Stores raw extracted data in optimized columnar format | Ingestion |
+| `Databricks CLI` | Uploads raw data to Lakehouse | Ingestion |
+| `Databricks Notebooks` | Converts Parquet into Delta tables (Bronze Layer) | Orchestration |
+| `dbt (Data Build Tool)` | Runs, tests, and documents SQL transformations | Transformation |
+| `Delta Lake` | Provides governance, reliability, and high performance | All |
+| `Databricks Jobs & Pipelines` | Automates pipeline execution end-to-end | Orchestration |
 
 ---
 
-## 3. Configuração e Execução
+## 3. Setup & Execution
 
-Para executar a pipeline completa localmente, siga as etapas abaixo na ordem correta.
-
-### 3.1 Pré-requisitos
+### 3.1 Requirements
 
 * [Docker Desktop](https://www.docker.com/products/docker-desktop/) (v4.x+)
 * [Git](https://git-scm.com/)
-* [Python 3.10 ou 3.11](https://www.python.org/) e `pip`
-* Acesso a um workspace **Databricks** (Free Edition ou superior)
-* Credenciais para o banco **MSSQL** e para a **API REST**
+* [Python 3.10 or 3.11](https://www.python.org/) with `pip`
+* Access to a **Databricks workspace** (Free Edition or higher)
+* Credentials for **MSSQL** and the **REST API**
 
-### 3.2 Clonar o Repositório
+### 3.2 Clone the Repository
 
 ```bash
-git clone [https://github.com/alerodriguessf/lighthouse_desafio03_alexandrersf](https://github.com/alerodriguessf/lighthouse_desafio03_alexandrersf)
+git clone https://github.com/alerodriguessf/lighthouse_desafio03_alexandrersf
 cd lighthouse_desafio03_alexandrersf
 ````
 
-### 3.3 Preparar Ambiente Virtual e Dependências
+### 3.3 Virtual Environment & Dependencies
 
-Antes de configurar as credenciais, prepare seu ambiente de desenvolvimento local.
-
-**1. Criar o Ambiente Virtual:**
+**1. Create virtual environment:**
 
 ```bash
 python -m venv venv
 source venv/bin/activate  # Linux/macOS
-# ou
+# or
 venv\Scripts\activate     # Windows
 ```
 
-**2. Instalar as Dependências:**
+**2. Install dependencies:**
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3.4 Configurar Credenciais
+### 3.4 Credentials Setup
 
-**1. Variáveis de Ambiente para Ingestão (`.env`):**
+**1. Environment variables (`.env`):**
 
-Crie um arquivo `.env` na raiz do projeto a partir do modelo `.env.save`. Este arquivo centraliza as credenciais para a etapa de ingestão com Docker e Meltano.
+Create a `.env` file in the project root from the template `.env.save`. It stores all credentials needed for ingestion with Docker and Meltano.
 
 ```env
-# CREDENCIAIS DE INGESTÃO (CHECKPOINT 2)
+# INGESTION CREDENTIALS
 # MSSQL
 TAP_MSSQL_HOST=your_mssql_host
 TAP_MSSQL_PORT=1433
@@ -92,20 +86,18 @@ TAP_MSSQL_PASSWORD=your_password
 TAP_MSSQL_DATABASE=AdventureWorks2022
 
 # API
-API_HOST=[https://your-api-url.com](https://your-api-url.com)
+API_HOST=https://your-api-url.com
 API_USER=your_api_user
 API_PASSWORD=your_api_password
 
-# CREDENCIAIS DO DATABRICKS (PARA INGESTÃO E DBT)
-DATABRICKS_HOST=[https://your-databricks-instance.cloud.databricks.com](https://your-databricks-instance.cloud.databricks.com)
+# DATABRICKS CREDENTIALS
+DATABRICKS_HOST=https://your-databricks-instance.cloud.databricks.com
 DATABRICKS_TOKEN=your_pat_token
 ```
 
-> 🔐 **Importante**: Não versione este arquivo com Git. Ele já está incluído no `.gitignore`.
+> 🔐 **Important:** Do not commit this file to Git. It is already listed in `.gitignore`.
 
-**2. Profile do dbt (`profiles.yml`):**
-
-Crie o arquivo `~/.dbt/profiles.yml` para que o dbt possa se conectar ao seu workspace Databricks.
+**2. dbt Profile (`profiles.yml`):**
 
 ```yaml
 dbt_checkpoint3_dw:
@@ -115,145 +107,92 @@ dbt_checkpoint3_dw:
       type: databricks
       catalog: ted_dev
       schema: silver
-      host: <seu-databricks-host> # Ex: [https://adb-....cloud.databricks.com](https://adb-....cloud.databricks.com)
-      http_path: /sql/1.0/warehouses/<seu-warehouse-id>
-      token: <seu-personal-access-token>
+      host: <your-databricks-host>
+      http_path: /sql/1.0/warehouses/<your-warehouse-id>
+      token: <your-personal-access-token>
 ```
 
-### 3.5 Executando a Pipeline
+### 3.5 Run the Pipeline
 
-**Etapa 1: Ingestão de Dados (Meltano & Docker)**
+**Step 1: Data Ingestion (Meltano & Docker)**
 
-Esta etapa extrai os dados das fontes e os carrega como arquivos Parquet no Databricks.
+```bash
+docker build -t lighthouse-ingestion-pipeline .
+docker run --env-file .env lighthouse-ingestion-pipeline
+```
 
-  * **Construir a Imagem Docker:**
+**Step 2: Data Transformation (dbt)**
 
-    ```bash
-    docker build -t lighthouse-ingestion-pipeline .
-    ```
+```bash
+dbt deps
+dbt run
+dbt test
+dbt docs generate
+dbt docs serve
+```
 
-  * **Executar o Contêiner de Ingestão:**
+---
 
-    ```bash
-    docker run --env-file .env lighthouse-ingestion-pipeline
-    ```
+## 4. dbt Modeling & Structure
 
-**Etapa 2: Transformação de Dados (dbt)**
+Data modeling follows a layered architecture aligned with dimensional modeling best practices.
 
-Com os dados brutos no Databricks, esta etapa executa as transformações para criar os modelos analíticos.
+📄 **Full interactive dbt docs:**
+👉 [checkpoint3-alexandrersf.netlify.app](https://checkpoint3-alexandrersf.netlify.app/#!/overview)
 
-  * **Executar os Comandos dbt:**
-    ```bash
-    # Instalar dependências do projeto dbt (se houver)
-    dbt deps
-
-    # Executar os modelos (camadas Bronze -> Silver -> Gold)
-    dbt run
-
-    # Rodar os testes de qualidade de dados
-    dbt test
-
-    # Gerar e servir a documentação localmente
-    dbt docs generate
-    dbt docs serve
-    ```
-
------
-
-## 4\. Organização e Modelagem no DBT
-
-A modelagem dos dados foi implementada utilizando o dbt com base na arquitetura em camadas (staging e marts), alinhada às boas práticas de engenharia de dados e modelagem dimensional.
-
-> A documentação completa e navegável dos modelos DBT pode ser consultada online:
-> **[https://checkpoint3-alexandrersf.netlify.app/\#\!/overview](https://checkpoint3-alexandrersf.netlify.app/#!/overview)**
-
-### 4.1 Estrutura dos diretórios
+**Project structure:**
 
 ```
 models/
-├── staging/            # Limpeza, padronização e normalização
-│   ├── stg_sales_order_header.sql
-│   └── ...
-├── marts/              # Modelos de negócio (dimensões e fatos)
-│   ├── dim_product.sql
-│   ├── fact_sales_order.sql
-│   └── ...
+├── staging/       # Silver layer (cleaning, normalization)
+├── marts/         # Gold layer (business-ready facts & dimensions)
 ```
 
-  * **Staging (Camada Silver):** Isola transformações iniciais, aplica casting, uniformiza nomes e lida com inconsistências.
-  * **Marts (Camada Gold):** Representa os modelos analíticos, contendo as tabelas fato e dimensões prontas para consumo.
+* **Staging (Silver):** Handles casting, normalization, and cleanup.
+* **Marts (Gold):** Business-ready fact and dimension models.
 
-### 4.2 Testes e Validações
+---
 
-Os arquivos `schema.yml` em cada diretório contêm testes de integridade (`not_null`, `unique`, `relationships`), documentação de colunas e tags para organização das execuções.
+## 5. Orchestration with Databricks Jobs & Pipelines
 
------
+Automation is handled by **Databricks Jobs & Pipelines**, defined declaratively in `databricks_pipeline.yml`.
 
-## 5\. Orquestração e Reprodutibilidade com Databricks Jobs & Pipelines
-
-A automação da pipeline é gerenciada pelo **Databricks Jobs & Pipelines**, garantindo que os dados sejam processados de forma agendada, confiável e na ordem correta. Toda a configuração do Jobs & Pipelines está definida de forma declarativa no arquivo `databricks_pipeline.yml`, localizado na raiz deste repositório.
-
-Essa abordagem permite que a orquestração seja versionada junto com o código e facilmente replicada.
-
-### 5.1 Estrutura e Dependências do Jobs & Pipelines
-
-O Jobs & Pipelines é composto por tarefas que executam notebooks e o pipeline dbt. As dependências entre elas garantem a integridade do fluxo de ponta a ponta.
-
-| Chave da Tarefa | Tipo de Tarefa | Descrição |
-| :--- | :--- | :--- |
-| `delta_conversion_api` | Notebook | Executa o script em `/scripts_aux/` para converter os dados da API (Parquet) em tabelas Delta na camada Bronze. |
-| `delta_conversion_sqlserver` | Notebook | Executa o script em `/scripts_aux/` para converter os dados do SQL Server (Parquet) para o formato Delta. |
-| `dbt_run` | Tarefa DBT | Após a conclusão das conversões, executa `dbt deps` e `dbt run` para atualizar as camadas Silver e Gold. |
-
-A sequência de execução é a seguinte:
+**Execution order:**
 
 ```
-[delta_conversion_api]       ─┐
-                               ├──>  [dbt_run]
+[delta_conversion_api] ─┐
+                        ├──> [dbt_run]
 [delta_conversion_sqlserver] ┘
 ```
 
-### 5.2 Como Implantar a Pipeline no Databricks
+Steps to deploy in Databricks UI:
 
-Em vez de usar a CLI, você pode criar o job diretamente na interface do Databricks de forma simples:
+1. Go to **Jobs & Pipelines** → **Create Job**.
+2. Edit YAML.
+3. Paste contents of `databricks_pipeline.yml`.
+4. Save & run.
 
-1.  **Acesse o seu Workspace Databricks** e navegue até a seção **Jobs & Pipelines**.
-2.  Clique no botão **Create Job**.
-3.  Dê um nome ao seu Job (ex: `lighthouse_pipeline_dbt`).
-4.  Na tela de configuração da primeira tarefa, procure e clique na opção **Edit YAML**.
-5.  **Abra o arquivo `databricks_pipeline.yml`** que está na raiz do repositório em sua máquina local.
-6.  **Copie todo o conteúdo** do arquivo.
-7.  **Cole o conteúdo** no editor YAML dentro do Databricks.
-8.  Clique em **Save**.
+---
 
-Pronto\! O seu Jobs & Pipelines será criado com todas as tarefas, dependências e configurações definidas no arquivo. Agora você pode executá-lo manualmente ou aguardar a execução agendada.
+## 6. Documentation & Deliverables
 
------
+* 📊 **dbt Documentation:** [checkpoint3-alexandrersf.netlify.app](https://checkpoint3-alexandrersf.netlify.app/#!/overview)
+* ✅ Ingestion Pipeline (Meltano)
+* ✅ Delta Conversion (Databricks Notebooks)
+* ✅ dbt Project with Tests
+* ✅ Orchestration (Databricks Jobs & Pipelines)
+* ✅ Published dbt Docs
 
-## 6\. Documentação, Visualização e Entregáveis
+---
 
-### 6.1 Documentação Técnica (dbt Docs)
+## 7. Contact
 
-Todos os modelos, colunas e fontes foram documentados. A documentação interativa, com linhagem de dados e descrições, está publicada e pode ser acessada publicamente.
+Project developed by **Alexandre R. Silva Filho** under the **Indicium Lighthouse Program**.
 
-🔗 **[Acesse a documentação dbt](https://checkpoint3-alexandrersf.netlify.app/#!/overview)**
+* **Email:** [alexandre.filho@indicium.tech](mailto:alexandre.filho@indicium.tech)
+* **LinkedIn:** [linkedin.com/in/alerodriguessf](https://www.linkedin.com/in/alerodriguessf/)
+* **GitHub:** [github.com/alerodriguessf](https://github.com/alerodriguessf)
 
-### 6.2 Entregáveis do Projeto
 
-| Item | Status | Localização / Artefato |
-| :--- | :--- | :--- |
-| Pipeline de ingestão (Meltano) | ✅ Concluído | `Dockerfile`, `entrypoint.sh`, `meltano.yml` |
-| Conversão para Delta Lake | ✅ Concluído | Notebooks Databricks em `/scripts_aux/` |
-| Projeto `dbt` com testes | ✅ Concluído | Diretório `/models`, `dbt_project.yml`, `schema.yml` |
-| Orquestração no Databricks | ✅ Concluído | Arquivo YAML versionado com a definição do Job |
-| Documentação dbt navegável | ✅ Publicado | [checkpoint3-alexandrersf.netlify.app](https://checkpoint3-alexandrersf.netlify.app/#!/overview) |
-
------
-
-## 7\. Contato e Créditos
-
-Este projeto foi desenvolvido por **Alexandre R. Silva Filho** como parte do programa **Lighthouse** da [link suspeito removido].
-
-  * **Email:** [alexandre.filho@indicium.tech](mailto:alexandre.filho@indicium.tech)
-  * **LinkedIn:** [https://www.linkedin.com/in/alerodriguessf](https://www.linkedin.com/in/alerodriguessf/)
-  * **GitHub:** [github.com/alerodriguessf](https://github.com/alerodriguessf)
+Quer que eu também crie uma **versão enxuta** (curta e chamativa, mais focada em recruiters) para colocar no topo do GitHub, antes da versão completa?
+```
