@@ -190,7 +190,7 @@ Steps to deploy in Databricks UI:
 Project developed by **Alexandre R. Silva Filho**.
 
 * **Email:** [alerodriguessf@gmail.com](mailto:alerodriguessf@gmail.com)
-* **LinkedIn:** [linkedin.com/in/alerodriguessf](https://www.linkedin.com/in/alerodriguessf/)
+* **LinkedIn:** [linkedin.com/in/alerodriguessf](https://www.linkedin.com/in/alexandrersf/)
 * **GitHub:** [github.com/alerodriguessf](https://github.com/alerodriguessf)
 
 ```
