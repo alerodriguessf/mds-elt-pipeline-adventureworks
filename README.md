@@ -187,12 +187,10 @@ Steps to deploy in Databricks UI:
 
 ## 7. Contact
 
-Project developed by **Alexandre R. Silva Filho** under the **Indicium Lighthouse Program**.
+Project developed by **Alexandre R. Silva Filho**.
 
-* **Email:** [alexandre.filho@indicium.tech](mailto:alexandre.filho@indicium.tech)
+* **Email:** [alerodriguessf@gmail.com](mailto:alerodriguessf@gmail.com)
 * **LinkedIn:** [linkedin.com/in/alerodriguessf](https://www.linkedin.com/in/alerodriguessf/)
 * **GitHub:** [github.com/alerodriguessf](https://github.com/alerodriguessf)
 
-
-Quer que eu também crie uma **versão enxuta** (curta e chamativa, mais focada em recruiters) para colocar no topo do GitHub, antes da versão completa?
 ```
