@@ -3,7 +3,7 @@
 
 ## 1. Project Overview
 
-This project consolidates the challenges from **Lighthouse Checkpoints 2 and 3** (Indicium), implementing a **modern end-to-end data pipeline**. The solution encompasses the entire flow, from data ingestion to transformation and analysis availability within a **Lakehouse architecture**.
+This project implements a **modern end-to-end data pipeline**. The solution encompasses the entire flow, from data ingestion to transformation and analysis availability within a **Lakehouse architecture**.
 
 The pipeline ingests data from both a **relational database (MSSQL)** and a **REST API**, using a containerized stack built with **Meltano and Docker**. Once ingested, data is transformed, modeled, and orchestrated in **Databricks** using **dbt (Data Build Tool)**, adhering to data engineering best practices.
 
